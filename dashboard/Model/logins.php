@@ -168,4 +168,26 @@ class Logins
 			die($e->getMessage());
 		}
 	}
+
+	public function passwordChange($data)
+	{
+		try 
+		{
+			$sql = "UPDATE tbllogins SET 
+						password            = ?
+
+				    WHERE uid = ?";
+
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+						$password_hash=hash('sha256', $data->password),
+						$data->uid
+					)
+				);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 }

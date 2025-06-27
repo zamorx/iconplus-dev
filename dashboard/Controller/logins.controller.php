@@ -70,4 +70,29 @@ class LoginsController
         $this->model->Eliminar($_REQUEST['uid']);
         header('Location: ?c=Logins');
     }
+
+    public function passWD()
+    {
+        $alm = new Logins();
+
+        if (isset($_REQUEST['uid'])) {
+            $alm = $this->model->getting($_REQUEST['uid']);
+        }
+
+        require_once 'View/header.php';
+        require_once 'View/logins-passwd.php';
+        require_once 'View/footer.php';
+    }
+
+    public function PasswordChange()
+    {
+        $alm = new Logins();
+
+        $alm->uid = $_REQUEST['uid'];
+        $alm->password = $_REQUEST['password'];
+
+        $this->model->passwordChange($alm);
+
+        header('Location: ?c=Logins');
+    }
 }
