@@ -50,7 +50,8 @@
 
 											<div class="dropdown-menu dropdown-menu-end">
 												<a class="dropdown-item" href="?c=Logins&a=Crud&uid=<?php echo $r->uid; ?>">Update</a>
-												<a class="dropdown-item" href="?c=Logins&a=Eliminar&uid=<?php echo $r->uid; ?>">Delete</a>
+												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Logins&a=Eliminar&uid=<?php echo $r->uid; ?>">Delete</a>
+												<a class="dropdown-item" href="?c=Logins&a=passWD&uid=<?php echo $r->uid; ?>">Change password</a>
 											</div>
 										</div></td>
 										</tr>

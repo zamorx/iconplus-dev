@@ -49,7 +49,7 @@
 											<div class="dropdown-menu dropdown-menu-end">
 												<a class="dropdown-item" href="<?php echo $r->downloadpath; ?>">Download file</a>
 												<a class="dropdown-item" href="?c=Downloads&a=Crud&downloadid=<?php echo $r->downloadid; ?>">Update</a>
-												<a class="dropdown-item" href="?c=Downloads&a=Eliminar&downloadid=<?php echo $r->downloadid; ?>">Delete</a>
+												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Downloads&a=Eliminar&downloadid=<?php echo $r->downloadid; ?>">Delete</a>
 											</div>
 										</div>
 											</td>

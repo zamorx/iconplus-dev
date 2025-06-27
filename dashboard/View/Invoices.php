@@ -68,7 +68,7 @@
 
 													<?if ($r->invoicestatus == 0) : ?>
 													<a class="dropdown-item" href="?c=Invoices&a=Crud&invoiceid=<?php echo $r->invoiceid; ?>">Update</a>
-													<a class="dropdown-item" href="?c=Invoices&a=Eliminar&invoiceid=<?php echo $r->invoiceid; ?>">Delete</a>
+													<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Invoices&a=Eliminar&invoiceid=<?php echo $r->invoiceid; ?>">Delete</a>
 													<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>
 													<? elseif ($r->invoicestatus == 1) : ?>
 													<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>

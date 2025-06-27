@@ -44,7 +44,7 @@
 
 											<div class="dropdown-menu dropdown-menu-end">
 												<a class="dropdown-item" href="?c=Categories&a=Crud&categoryid=<?php echo $r->categoryid; ?>">Update</a>
-												<a class="dropdown-item" href="?c=Categories&a=Eliminar&categoryid=<?php echo $r->categoryid; ?>">Delete</a>
+												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Categories&a=Eliminar&categoryid=<?php echo $r->categoryid; ?>">Delete</a>
 											</div>
 										</div></td>
 										</tr>
