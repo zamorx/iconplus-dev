@@ -50,7 +50,7 @@
 													<? elseif ($r->invoicestatus == 1) : ?>
 														<span class="badge bg-warning">Pending</span>
 													<? elseif ($r->invoicestatus == 0):?>
-														<span class="badge bg-primary">Issued</span>
+														<span class="badge bg-secondary">Issued</span>
 													<? endif; ?>
 											<? else : ?>
 													<span class="badge bg-danger">Deleted</span>

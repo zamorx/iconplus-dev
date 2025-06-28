@@ -21,7 +21,9 @@
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title"><?php echo $alm->companyid != null ? $alm->companyname : 'Nuevo Registro'; ?></h5>
-									<h6 class="card-subtitle text-muted">Default Bootstrap form layout.</h6>
+									<h6 class="card-subtitle text-muted">
+										<?php echo $alm->companyid != null ? 'Actualice el formulario editando el campo deseado.' : 'Complete el formulario llenando todos los campos solicitados.'; ?>
+									</h6>
 								</div>
 								<div class="card-body">
 									<form action="?c=Companies&a=Guardar" method="post" enctype="multipart/form-data">

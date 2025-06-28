@@ -21,7 +21,7 @@
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title"><?php echo $alm->uid != null ? $alm->fname : 'Nuevo Registro'; ?></h5>
-									<h6 class="card-subtitle text-muted">Default Bootstrap form layout.</h6>
+									<h6 class="card-subtitle text-muted">Complete el formulario llenando todos los campos solicitados</h6>
 								</div>
 								<div class="card-body">
 
