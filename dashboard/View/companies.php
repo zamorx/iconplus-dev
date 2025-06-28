@@ -20,14 +20,13 @@
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title">Companies</h5>
-									<h6 class="card-subtitle text-muted">Add <code>.table-hover</code> to enable a hover state on table rows within a
-										<code>&lt;tbody&gt;</code>.</h6>
+									<h6 class="card-subtitle text-muted">Directorio de todas las empresas en el sistema, que muestra detalles de contacto clave, estado y otra información relevante para un acceso y gestión rápidos.</h6>
 								</div>
 								<table class="table table-striped table-hover">
 									<thead>
 										<tr>
 											<th>Company Name</th>
-											<th>Company Phone Number</th>
+											<th>Company RUC</th>
 											<th></th>
 										</tr>
 									</thead>

@@ -14,13 +14,12 @@
 						</nav>
 					</div>
 					<div class="row">
-						<div class="col-xxl-12">
+						<div class="col-xxl-9">
 
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title">Facturas</h5>
-									<h6 class="card-subtitle text-muted">Add <code>.table-hover</code> to enable a hover state on table rows within a
-										<code>&lt;tbody&gt;</code>.</h6>
+									<h6 class="card-subtitle text-muted">Un resumen de todas las facturas emitidas, incluyendo detalles clave como fechas de emisión, nombres de clientes, productos/servicios y estado de pago. Esta lista facilita el seguimiento de la facturación y el control de los pagos pendientes.</h6>
 								</div>
 								<table id="datatables-reponsive" class="table table-striped table-hover">
 									<thead>
@@ -41,7 +40,7 @@
 												<?php echo $r->invoicedate; ?>
 											</td>
 											<td><?php echo $r->invoiceid; ?></td>
-											<td><?php echo $r->companyname; ?></td>
+											<td><?php echo $r->shortname; ?></td>
 											<td><?php echo $r->invoiceservice; ?></td>
 											<td>
 
@@ -51,44 +50,46 @@
 													<? elseif ($r->invoicestatus == 1) : ?>
 														<span class="badge bg-warning">Pending</span>
 													<? elseif ($r->invoicestatus == 0):?>
-														<span class="badge bg-secondary">Issued</span>
+														<span class="badge bg-primary">Issued</span>
 													<? endif; ?>
 											<? else : ?>
 													<span class="badge bg-danger">Deleted</span>
 											<?endif; ?>
 
 											</td>
-											<td><div class="d-inline-block dropdown show">
-											<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
-											</a>
+											<td>
+												<div class="d-inline-block dropdown show">
+													<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+													</a>
 
-											<div class="dropdown-menu dropdown-menu-end">
-												<?php if ($r->invoiceactive == 1) : ?>
+													<div class="dropdown-menu dropdown-menu-end">
+														<?php if ($r->invoiceactive == 1) : ?>
 
-													<?if ($r->invoicestatus == 0) : ?>
-													<a class="dropdown-item" href="?c=Invoices&a=Crud&invoiceid=<?php echo $r->invoiceid; ?>">Update</a>
-													<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Invoices&a=Eliminar&invoiceid=<?php echo $r->invoiceid; ?>">Delete</a>
-													<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>
-													<? elseif ($r->invoicestatus == 1) : ?>
-													<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>
-													<a class="dropdown-item" target="_blank" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">View</a>
-													<a class="dropdown-item" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Create pdf</a>
-													<? else : ?>
-													<a class="dropdown-item" target="_blank" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">View</a>
-													<a class="dropdown-item" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Create pdf</a>
+															<?if ($r->invoicestatus == 0) : ?>
+															<a class="dropdown-item" href="?c=Invoices&a=Crud&invoiceid=<?php echo $r->invoiceid; ?>">Update</a>
+															<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Invoices&a=Eliminar&invoiceid=<?php echo $r->invoiceid; ?>">Delete</a>
+															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>
+															<? elseif ($r->invoicestatus == 1) : ?>
+															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>
+															<a class="dropdown-item" target="_blank" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">View</a>
+															<a class="dropdown-item" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Create pdf</a>
+															<? else : ?>
+															<a class="dropdown-item" target="_blank" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">View</a>
+															<a class="dropdown-item" href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Create pdf</a>
+																
+															
+															<? endif; ?>
+
+														<? else : ?>
+															<span class="dropdown-item">No Actions</span>
+
+														<?endif; ?>
 														
-													
-													<? endif; ?>
-
-												<? else : ?>
-													<span class="dropdown-item">No Actions</span>
-
-												<?endif; ?>
-												
-												
-											</div>
-										</div></td>
+														
+													</div>
+												</div>
+											</td>
 										</tr>
 										<?php endforeach; ?>
 									</tbody>
@@ -97,7 +98,7 @@
 							
 						</div>
 
-						<!--<div class="col-xxl-3">
+						<div class="col-xxl-3">
 							<div class="card">
 								<div class="card-header">
 									<div class="card-actions float-end">
@@ -141,7 +142,7 @@
 											</tr>
 											<tr>
 												<th>Occupation</th>
-												<td><?php echo $userDetails->occupation; ?></td>
+												<td><?php echo $userDetails->loginoccupation; ?></td>
 											</tr>
 											<tr>
 												<th>Email</th>
@@ -149,7 +150,7 @@
 											</tr>
 											<tr>
 												<th>Phone</th>
-												<td><?php echo $userDetails->phone; ?></td>
+												<td><?php echo $userDetails->loginphone; ?></td>
 											</tr>
 											<tr>
 												<th>Website</th>
@@ -163,13 +164,13 @@
 									</table>
 								</div>
 							</div>
-						</div>-->
+						</div>
 					</div>
 				</div>
 			</main>
 								
 
-			<script>
+	<script>
 		document.addEventListener("DOMContentLoaded", function() {
 			
 			// Datatables Responsive
@@ -179,4 +180,6 @@
 			});
 		});
 	</script>
+
+
 

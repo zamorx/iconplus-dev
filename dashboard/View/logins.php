@@ -20,8 +20,7 @@
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title">Logins</h5>
-									<h6 class="card-subtitle text-muted">Add <code>.table-hover</code> to enable a hover state on table rows within a
-										<code>&lt;tbody&gt;</code>.</h6>
+									<h6 class="card-subtitle text-muted">Lista centralizada de todos los administradores registrados en el sistema. Muestra información esencial como nombres, roles y detalles de contacto para una fácil administración y supervisión..</h6>
 								</div>
 								<table class="table table-striped table-hover">
 									<thead>

@@ -19,8 +19,7 @@
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title">Ofimática</h5>
-									<h6 class="card-subtitle text-muted">Add <code>.table-hover</code> to enable a hover state on table rows within a
-										<code>&lt;tbody&gt;</code>.</h6>
+									<h6 class="card-subtitle text-muted">Lista de programas de ofimática para Windows y macOS, Seleccione y haga clic en el botón de descarga para comenzar.</h6>
 								</div>
 								<table class="table table-striped table-hover">
 									<thead>
