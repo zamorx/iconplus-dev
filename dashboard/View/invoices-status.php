@@ -141,13 +141,3 @@
 					</div>
 				</div>
 			</main>
-
-
-<script>
-    ClassicEditor
-        .create(document.querySelector('#servicedescription'), {
-			toolbar: ['bold', 'italic', 'bulletedList', 'numberedList']
-		})
-        .then(editor => { console.log(editor); })
-        .catch(error => { console.error(error); });
-</script>
