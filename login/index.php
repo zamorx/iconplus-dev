@@ -11,7 +11,7 @@ if (!empty($_POST['loginSubmit'])) {
   if (strlen(trim($usernameEmail)) > 1 && strlen(trim($password)) > 1) {
     $uid = $userClass->userLogin($usernameEmail, $password);
     if ($uid) {
-      $url = BASE_URL . '../dashboard/';
+      $url = BASE_URL . '../app/';
       header("Location: $url"); // Page redirecting to home.php 
     } else {
       $errorMsgLogin = "Por favor, revise sus datos de registro.";
@@ -20,9 +20,7 @@ if (!empty($_POST['loginSubmit'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
   	<title>iconPlus Portal</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +32,8 @@ if (!empty($_POST['loginSubmit'])) {
 	<link rel="stylesheet" href="css/style.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
+
+<body class="img js-fullheight" style="background-image: url(images/bg.jpg);">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -46,30 +45,26 @@ if (!empty($_POST['loginSubmit'])) {
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Sign in to your account</h3>
-		      	<form method="post" action="" name="login" class="text-left form-validate">
-		      		<div class="form-group">
+          <form method="post" action="" name="login" class="text-left form-validate">
+            <div class="form-group">
 		      			<input type="text" id="login-username" name="usernameEmail" class="form-control" placeholder="Username" required>
-		      		</div>
-	            <div class="form-group">
+		      	</div>
+             <div class="form-group">
 	              <input id="password-field" type="password" id="login-password" name="password" class="form-control" placeholder="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
-	            <div class="form-group">
-	            	<button type="submit" name="loginSubmit" value="Login" class="form-control btn btn-primary submit px-3">Sign In</button>
-	            </div>
-	          </form>
-	          
-		      </div>
+            <div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
+            <div class="form-group text-center"><input type="submit" name="loginSubmit" value="Sign in" class="form-control btn btn-primary submit px-3">
+              <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+            </div>
+          </form>
+          </div>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
-
-	</body>
-</html>
-
+</body>

@@ -1,15 +1,20 @@
 <?php
 session_start();
 /* DATABASE CONFIGURATION */
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+/*define('DB_PASSWORD', '');*/
+define('DB_DATABASE', 'supportdb');
 define("BASE_URL", "http://development.local/login/");
 
 
 function getDB() 
 {
-$dbhost="localhost";
-$dbuser="root";
-$dbpass="";
-$dbname="supportdb";
+$dbhost=DB_SERVER;
+$dbuser=DB_USERNAME;
+/*$dbpass=DB_PASSWORD;*/
+$dbpass='';
+$dbname=DB_DATABASE;
 try {
 $dbConnection = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass); 
 $dbConnection->exec("set names utf8");
