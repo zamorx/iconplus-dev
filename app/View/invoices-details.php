@@ -129,7 +129,7 @@ setlocale(LC_MONETARY,"en_US");
 										</p>
 
 										<a href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $alm->invoiceid; ?>" class="btn btn-primary">
-											Print this pdf
+											Print to pdf
 										</a>
 									</div>
 								</div>
