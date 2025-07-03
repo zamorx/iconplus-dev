@@ -24,8 +24,8 @@
 								<table class="table table-striped table-hover">
 									<thead>
 										<tr>
-											<th>Program Name</th>
-											<th class="downloads">Actions</th>
+											<th>Nombre de Software</th>
+											<th class="downloads">Acciones</th>
 											
 										</tr>
 									</thead>
@@ -44,9 +44,9 @@
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="<?php echo $r->downloadpath; ?>">Download file</a>
-												<a class="dropdown-item" href="?c=Downloads&a=Crud&downloadid=<?php echo $r->downloadid; ?>">Update</a>
-												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Downloads&a=Eliminar&downloadid=<?php echo $r->downloadid; ?>">Delete</a>
+												<a class="dropdown-item" href="<?php echo $r->downloadpath; ?>">Descargar archivo</a>
+												<a class="dropdown-item" href="?c=Downloads&a=Crud&downloadid=<?php echo $r->downloadid; ?>">Actualizar</a>
+												<a class="dropdown-item" onclick="return confirm('¿Está seguro que desea eliminar este registro?');" href="?c=Downloads&a=Eliminar&downloadid=<?php echo $r->downloadid; ?>">Eliminar</a>
 											</div>
 										</div>
 											</td>

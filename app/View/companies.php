@@ -5,12 +5,12 @@
 
 					<div class="header">
 						<h1 class="header-title">
-							Companies
+							Compañías
 						</h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Companies</li>
+								<li class="breadcrumb-item active" aria-current="page">Compañías</li>
 							</ol>
 						</nav>
 					</div>
@@ -19,14 +19,14 @@
 
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title">Companies</h5>
+									<h5 class="card-title">Compañías</h5>
 									<h6 class="card-subtitle text-muted">Directorio de todas las empresas en el sistema, que muestra detalles de contacto clave, estado y otra información relevante para un acceso y gestión rápidos.</h6>
 								</div>
 								<table class="table table-striped table-hover">
 									<thead>
 										<tr>
-											<th>Company Name</th>
-											<th>Company RUC</th>
+											<th>Nombre de Compañía</th>
+											<th>Número RUC</th>
 											<th></th>
 										</tr>
 									</thead>
@@ -44,8 +44,8 @@
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="?c=Companies&a=Crud&companyid=<?php echo $r->companyid; ?>">Update</a>
-												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Companies&a=Eliminar&companyid=<?php echo $r->companyid; ?>">Delete</a>
+												<a class="dropdown-item" href="?c=Companies&a=Crud&companyid=<?php echo $r->companyid; ?>">Actualizar</a>
+												<a class="dropdown-item" onclick="return confirm('¿Está seguro que desea eliminar este registro?');" href="?c=Companies&a=Eliminar&companyid=<?php echo $r->companyid; ?>">Eliminar</a>
 											</div>
 										</div></td>
 										</tr>

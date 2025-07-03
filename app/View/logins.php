@@ -48,9 +48,9 @@
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="?c=Logins&a=Crud&uid=<?php echo $r->uid; ?>">Update</a>
-												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Logins&a=Eliminar&uid=<?php echo $r->uid; ?>">Delete</a>
-												<a class="dropdown-item" href="?c=Logins&a=passWD&uid=<?php echo $r->uid; ?>">Change password</a>
+												<a class="dropdown-item" href="?c=Logins&a=Crud&uid=<?php echo $r->uid; ?>">Actualizar</a>
+												<a class="dropdown-item" onclick="return confirm('¿Está seguro que desea eliminar este registro?');" href="?c=Logins&a=Eliminar&uid=<?php echo $r->uid; ?>">Eliminar</a>
+												<a class="dropdown-item" href="?c=Logins&a=passWD&uid=<?php echo $r->uid; ?>">Cambiar password</a>
 											</div>
 										</div></td>
 										</tr>
@@ -88,7 +88,7 @@
 											<img src="Assets/img/avatars/<?php echo $userDetails->username; ?>.jpg" width="64" height="64" class="rounded-circle mt-2" alt="Angelica Ramos">
 										</div>
 										<div class="col-sm-9 col-xl-12 col-xxl-8">
-											<strong>About me</strong>
+											<strong>Sobre mi</strong>
 											<p><?php echo $userDetails->aboutme; ?></p>
 										</div>
 									</div>
@@ -96,15 +96,15 @@
 									<table class="table table-sm my-2">
 										<tbody>
 											<tr>
-												<th>Name</th>
+												<th>Nombre</th>
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Company</th>
+												<th>Compañía</th>
 												<td><?php echo $userDetails->companyname; ?></td>
 											</tr>
 											<tr>
-												<th>Occupation</th>
+												<th>Cargo</th>
 												<td><?php echo $userDetails->loginoccupation; ?></td>
 											</tr>
 											<tr>
@@ -112,7 +112,7 @@
 												<td><?php echo $userDetails->email; ?></td>
 											</tr>
 											<tr>
-												<th>Phone</th>
+												<th>Teléfono</th>
 												<td><?php echo $userDetails->loginphone; ?></td>
 											</tr>
 											<tr>
@@ -120,8 +120,8 @@
 												<td>www.iconplus.net</td>
 											</tr>
 											<tr>
-												<th>Status</th>
-												<td><span class="badge bg-success">Active</span></td>
+												<th>Estado</th>
+												<td><span class="badge bg-success">Activo</span></td>
 											</tr>
 										</tbody>
 									</table>

@@ -113,7 +113,7 @@
 											</div>
 										</div>	
 										
-										<button type="submit" id="toastr-clear" class="btn btn-primary">Submit</button>
+										<button type="submit" id="toastr-clear" class="btn btn-primary">Actualizar</button>
 									</form>
 								</div>
 							</div>
@@ -191,7 +191,7 @@
 											<!--<input type="text-box" name="idrol" value="<?php echo $alm->idrol; ?>" class="form-control" placeholder="Enter role">-->
 											</div>
 										</div>
-										<button type="submit" id="toastr-clear" class="btn btn-primary">Submit</button>
+										<button type="submit" id="toastr-clear" class="btn btn-primary">Guardar</button>
 									</form>
 								</div>
 							</div>
@@ -231,7 +231,7 @@
 											<img src="Assets/img/avatars/<?php echo $userDetails->username; ?>.jpg" width="64" height="64" class="rounded-circle mt-2" alt="Angelica Ramos">
 										</div>
 										<div class="col-sm-9 col-xl-12 col-xxl-8">
-											<strong>About me</strong>
+											<strong>Sobre mi</strong>
 											<p><?php echo $userDetails->aboutme; ?></p>
 										</div>
 									</div>
@@ -239,15 +239,15 @@
 									<table class="table table-sm my-2">
 										<tbody>
 											<tr>
-												<th>Name</th>
+												<th>Nombre</th>
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Company</th>
+												<th>Compañía</th>
 												<td><?php echo $userDetails->companyname; ?></td>
 											</tr>
 											<tr>
-												<th>Occupation</th>
+												<th>Cargo</th>
 												<td><?php echo $userDetails->loginoccupation; ?></td>
 											</tr>
 											<tr>
@@ -255,7 +255,7 @@
 												<td><?php echo $userDetails->email; ?></td>
 											</tr>
 											<tr>
-												<th>Phone</th>
+												<th>Teléfono</th>
 												<td><?php echo $userDetails->loginphone; ?></td>
 											</tr>
 											<tr>
@@ -263,8 +263,8 @@
 												<td><?php echo $userDetails->companyweb; ?></td>
 											</tr>
 											<tr>
-												<th>Status</th>
-												<td><span class="badge bg-success">Active</span></td>
+												<th>Estado</th>
+												<td><span class="badge bg-success">Activo</span></td>
 											</tr>
 										</tbody>
 									</table>

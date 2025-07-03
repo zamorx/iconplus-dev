@@ -46,7 +46,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Sales Today</h5>
+														<h5 class="card-title">Ventas este Mes</h5>
 													</div>
 
 													<div class="col-auto">
@@ -68,7 +68,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Visitors Today</h5>
+														<h5 class="card-title">Usuarios Registrados</h5>
 													</div>
 
 													<div class="col-auto">
@@ -79,7 +79,7 @@
 														</div>
 													</div>
 												</div>
-												<h1 class="display-5 mt-1 mb-3">17.212</h1>
+												<h1 class="display-5 mt-1 mb-3">51</h1>
 												<div class="mb-0">
 													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.50% </span>
 													More visitors than usual
@@ -92,7 +92,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Total Earnings</h5>
+														<h5 class="card-title">Ganancia Total</h5>
 													</div>
 
 													<div class="col-auto">
@@ -114,7 +114,7 @@
 											<div class="card-body">
 												<div class="row">
 													<div class="col mt-0">
-														<h5 class="card-title">Pending Orders</h5>
+														<h5 class="card-title">Facturas Pendientes</h5>
 													</div>
 
 													<div class="col-auto">

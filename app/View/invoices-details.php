@@ -10,12 +10,12 @@ setlocale(LC_MONETARY,"en_US");
 
 					<div class="header">
 						<h1 class="header-title">
-							Invoices
+							Facturas
 						</h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-								<li class="breadcrumb-item"><a href="?c=Invoices">Invoices</a></li>
+								<li class="breadcrumb-item"><a href="?c=Invoices">Facturas</a></li>
 								<li class="breadcrumb-item active" aria-current="invoices"><?php echo $alm->invoiceid != null ? $alm->invoiceservice  : 'Nuevo Registro'; ?></li>
 							</ol>
 						</nav>
@@ -129,7 +129,7 @@ setlocale(LC_MONETARY,"en_US");
 										</p>
 
 										<a href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $alm->invoiceid; ?>" class="btn btn-primary">
-											Print to pdf
+											Exportar a pdf
 										</a>
 									</div>
 								</div>
@@ -156,7 +156,7 @@ setlocale(LC_MONETARY,"en_US");
 											</div>
 										</div>
 									</div>
-									<h5 class="card-title mb-0">Billing information</h5>
+									<h5 class="card-title mb-0">Información de facturación</h5>
 								</div>
 								<div class="card-body">
 									<div class="row g-0">
@@ -164,7 +164,7 @@ setlocale(LC_MONETARY,"en_US");
 											<img src="Assets/img/avatars/administrator.jpg" width="64" height="64" class="rounded-circle mt-2" alt="Angelica Ramos">
 										</div>
 										<div class="col-sm-9 col-xl-12 col-xxl-8">
-											<strong>Billing user</strong>
+											<strong>Usuario de facturación</strong>
 											<p><?php echo $alm->fname; ?></p>
 										</div>
 									</div>
@@ -172,11 +172,11 @@ setlocale(LC_MONETARY,"en_US");
 									<table class="table table-sm my-2">
 										<tbody>
 											<tr>
-												<th>Company</th>
+												<th>Compañía</th>
 												<td><?php echo $alm->companyname; ?></td>
 											</tr>
 											<tr>
-												<th>Occupation</th>
+												<th>Cargo</th>
 												<td><?php echo $alm->userrol; ?></td>
 											</tr>
 											<tr>
@@ -184,7 +184,7 @@ setlocale(LC_MONETARY,"en_US");
 												<td><?php echo $alm->useremail; ?></td>
 											</tr>
 											<tr>
-												<th>Phone</th>
+												<th>Teléfono</th>
 												<td><?php echo $alm->userphone; ?></td>
 											</tr>
 											<tr>
@@ -192,8 +192,8 @@ setlocale(LC_MONETARY,"en_US");
 												<td><?php echo $alm->companyweb; ?></td>
 											</tr>
 											<tr>
-												<th>Status</th>
-												<td><span class="badge bg-success">Active</span></td>
+												<th>Estado</th>
+												<td><span class="badge bg-success">Activo</span></td>
 											</tr>
 										</tbody>
 									</table>

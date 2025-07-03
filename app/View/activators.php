@@ -25,8 +25,8 @@
 								<table class="table table-striped table-hover">
 									<thead>
 										<tr>
-											<th>Program Name</th>
-											<th class="downloads">Actions</th>
+											<th>Nombre de Software</th>
+											<th class="downloads">Acciones</th>
 											
 										</tr>
 									</thead>
@@ -45,9 +45,9 @@
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="<?php echo $r->downloadpath; ?>">Download file</a>
-												<a class="dropdown-item" href="?c=Downloads&a=Crud&downloadid=<?php echo $r->downloadid; ?>">Update</a>
-												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Downloads&a=Eliminar&downloadid=<?php echo $r->downloadid; ?>">Delete</a>
+												<a class="dropdown-item" href="<?php echo $r->downloadpath; ?>">Descargar archivo</a>
+												<a class="dropdown-item" href="?c=Downloads&a=Crud&downloadid=<?php echo $r->downloadid; ?>">Actualizar</a>
+												<a class="dropdown-item" onclick="return confirm('¿Está seguro que desea eliminar este registro?');" href="?c=Downloads&a=Eliminar&downloadid=<?php echo $r->downloadid; ?>">Eliminar</a>
 											</div>
 										</div>
 											</td>
@@ -65,7 +65,7 @@
 							<div class="card">
 								<img class="card-img-top" src="Assets/img/photos/activators.jpg" alt="Activators">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Software activation tools</h5>
+									<h5 class="card-title mb-0">Herramientas de activación de Software</h5>
 								</div>
 								<div class="card-body">
 									<p class="card-text">We should activate software to ensure full functionality, receive updates, and support developers while staying legally compliant.</p>

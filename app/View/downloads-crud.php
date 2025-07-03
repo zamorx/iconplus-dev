@@ -5,12 +5,12 @@
 
 					<div class="header">
 						<h1 class="header-title">
-							Downloads
+							Descargas
 						</h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-								<li class="breadcrumb-item"><a href="?c=Downloads">Downloads</a></li>
+								<li class="breadcrumb-item"><a href="index.php">Descargas</a></li>
+								<li class="breadcrumb-item"><a href="?c=Downloads">Descargas</a></li>
 								<li class="breadcrumb-item active" aria-current="downloads"><?php echo $alm->downloadid != null ? $alm->downloadname  : 'Nuevo Registro'; ?></li>
 							</ol>
 						</nav>
@@ -30,7 +30,7 @@
                             			<input type="hidden" name="downloadid" value="<?php echo $alm->downloadid; ?>" />
 										<div class="row">
 										<div class="mb-3 col-md-6">
-											<label class="form-label">Category Name</label>
+											<label class="form-label">Categoría</label>
 											<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-folder"></i></span>
 											<select id="categoryid" name="categoryid" value="<?php echo $alm->categoryname; ?>" class="form-control">
@@ -42,7 +42,7 @@
 											</div>
 										</div>
 										<div class="mb-3 col-md-6">
-											<label class="form-label">Platform</label>
+											<label class="form-label">Plataforma</label>
 											<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-laptop"></i></span>
 											<select name="osname" id="osname" class="form-control" value="<?php echo $alm->osname; ?>">
@@ -56,7 +56,7 @@
 											</div>
 										</div>
 										<div class="mb-3 col-md-6">
-											<label class="form-label">Software Name</label>
+											<label class="form-label">Nombre de Software</label>
 											<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-tag"></i></span>
 												<input type="text-box" name="downloadname" value="<?php echo $alm->downloadname; ?>" class="form-control" placeholder="Enter software name">
@@ -66,14 +66,18 @@
 										
 										
 										<div class="mb-3">
-											<label class="form-label">AWS S3 Path</label>
+											<label class="form-label">Ruta AWS S3</label>
 											<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-link"></i></span>
 													<input type="text-box" name="downloadpath" value="<?php echo $alm->downloadpath; ?>" class="form-control" placeholder="Enter download path">
 											</div>
 										</div>
 										
-										<button type="submit" class="btn btn-primary">Submit</button>
+										<?php if ($alm->downloadid > 0) :?>
+											<button type="submit" class="btn btn-primary">Actualizar</button>
+										<? else :?>
+											<button type="submit" class="btn btn-primary">Guardar</button>
+										<?endif ?>
 									</form>
 								</div>
 							</div>
@@ -88,7 +92,7 @@
 								</div>
 								<div class="card-body">
 									<p class="card-text">AWS S3, or Amazon Simple Storage Service, is a cloud-based object storage service offered by Amazon Web Services (AWS). It allows users to store and retrieve any amount of data, from anywhere, via the internet. S3 is highly scalable, durable, and secure, making it suitable for various use cases like data storage, backups, data lakes, and website hosting</p>
-									<a target="_blank" href="https://aws.amazon.com/s3/" class="btn btn-primary">Go to AWS S3</a>
+									<a target="_blank" href="https://aws.amazon.com/s3/" class="btn btn-primary">Ir a AWS S3</a>
 								</div>
 							</div>
 						</div>

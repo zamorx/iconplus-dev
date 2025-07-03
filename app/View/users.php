@@ -29,7 +29,7 @@
 											<th>Cargo</th>
 											<th>Email</th>
 											<th>Teléfono</th>
-											<th>Acciones</th>
+											<th class="downloads">Acciones</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -42,14 +42,14 @@
 											<td><?php echo $r->userrol; ?></td>
 											<td><?php echo $r->useremail; ?></td>
 											<td><?php echo $r->userphone; ?></td>
-											<td><div class="d-inline-block dropdown show">
+											<td class="downloads"><div class="d-inline-block dropdown show">
 											<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
 												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="?c=Users&a=Crud&userid=<?php echo $r->userid; ?>">Update</a>
-												<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Users&a=Eliminar&userid=<?php echo $r->userid; ?>">Delete</a>
+												<a class="dropdown-item" href="?c=Users&a=Crud&userid=<?php echo $r->userid; ?>">Actualizar</a>
+												<a class="dropdown-item" onclick="return confirm('¿Está seguro que desea eliminar este registro?');" href="?c=Users&a=Eliminar&userid=<?php echo $r->userid; ?>">Eliminar</a>
 											</div>
 										</div></td>
 										</tr>

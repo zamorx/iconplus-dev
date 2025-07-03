@@ -5,12 +5,12 @@
 
 					<div class="header">
 						<h1 class="header-title">
-							Companies
+							Compañías
 						</h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-								<li class="breadcrumb-item"><a href="?c=Companies">Companies</a></li>
+								<li class="breadcrumb-item"><a href="?c=Companies">Compañías</a></li>
 								<li class="breadcrumb-item active" aria-current="companies"><?php echo $alm->companyid != null ? $alm->companyname  : 'Nuevo Registro'; ?></li>
 							</ol>
 						</nav>
@@ -30,42 +30,47 @@
                             			<input type="hidden" name="companyid" value="<?php echo $alm->companyid; ?>" />
 										<div class="row">
 										<div class="mb-3 col-lg-6">
-											<label class="form-label">Company Name</label>
+											<label class="form-label">Nombre de Compañía</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-tag"></i></span>		
 												<input type="text-box" name="companyname" value="<?php echo $alm->companyname; ?>" class="form-control" placeholder="Enter company name">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6">
-											<label class="form-label">Company RUC</label>
+											<label class="form-label">Número RUC</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-barcode"></i></span>		
 												<input type="text-box" name="companyruc" value="<?php echo $alm->companyruc; ?>" class="form-control" placeholder="Enter company RUC">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6">
-											<label class="form-label">Company Address</label>
+											<label class="form-label">Dirección</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-map-marker-alt"></i></span>		
 												<input type="text-box" name="companyaddress" value="<?php echo $alm->companyaddress; ?>" class="form-control" placeholder="Enter company address">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6">
-											<label class="form-label">Company City</label>
+											<label class="form-label">Ciudad</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-city"></i></span>		
 												<input type="text-box" name="companycity" value="<?php echo $alm->companycity; ?>" class="form-control" placeholder="Enter company city">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6">
-											<label class="form-label">Company Country</label>
+											<label class="form-label">País</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-map-marked-alt"></i></span>		
 												<input type="text-box" name="companycountry" value="<?php echo $alm->companycountry; ?>" class="form-control" placeholder="Enter company country">
 											</div>
 										</div>
 										</div>
-										<button type="submit" class="btn btn-primary">Submit</button>
+										<?php if ($alm->companyid > 0) :?>
+											<button type="submit" class="btn btn-primary">Actualizar</button>
+										<? else :?>
+											<button type="submit" class="btn btn-primary">Guardar</button>
+										<?endif ?>
+
 									</form>
 								</div>
 							</div>
@@ -85,7 +90,7 @@
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="#">Action</a>
+												<a class="dropdown-item" href="#">Acciones</a>
 												<a class="dropdown-item" href="#">Another action</a>
 												<a class="dropdown-item" href="#">Something else here</a>
 											</div>

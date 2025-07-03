@@ -5,12 +5,12 @@
 
 					<div class="header">
 						<h1 class="header-title">
-							Invoices
+							Facturas
 						</h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-								<li class="breadcrumb-item"><a href="?c=Invoices">Invoices</a></li>
+								<li class="breadcrumb-item"><a href="?c=Invoices">Facturas</a></li>
 								<li class="breadcrumb-item active" aria-current="invoices"><?php echo $alm->invoiceid != null ? $alm->invoiceservice  : 'Nuevo Registro'; ?></li>
 							</ol>
 						</nav>
@@ -31,7 +31,7 @@
 										<div class="row">
 
 											<div class="mb-3 col-md-6">
-												<label class="form-label">Company name</label>	
+												<label class="form-label">Nombre de compañía</label>	
 												
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 far fa-fw fa-building"></i></span>
@@ -45,7 +45,7 @@
 												
 											</div>
 											<div class="mb-3 col-md-6">
-												<label class="form-label">Date</label>
+												<label class="form-label">Fecha</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 far fa-fw fa-calendar-plus"></i></span>
 												<input type="date" name="invoicedate" value="<?php echo $alm->invoicedate; ?>" class="form-control" placeholder="Enter date">
@@ -53,20 +53,20 @@
 											</div>
 										</div>
 										<div class="mb-3">
-											<label class="form-label">Service name</label>
+											<label class="form-label">Servicio</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 far fa-fw fa-keyboard"></i></span>
 												<input type="text-box" name="invoiceservice" value="<?php echo $alm->invoiceservice; ?>" class="form-control" placeholder="Enter service name">
 											</div>
 										</div>
 										<div class="mb-3">
-											<label class="form-label">Service description</label>
+											<label class="form-label">Descripción del servicio</label>
 											
 											<textarea id="servicedescription" name="servicedescription" class="form-control" placeholder="Enter a service description"><?php echo $alm->servicedescription; ?></textarea>
 										</div>
 										<div class="row">
 											<div class="mb-3 col-md-6"> 
-												<label class="form-label">Service price</label>
+												<label class="form-label">Precio</label>
 
 
 												<div class="input-group mb-3">
@@ -76,7 +76,7 @@
 
 											</div>
 											<div class="mb-3 col-md-6">
-												<label class="form-label">Service quantity</label>
+												<label class="form-label">Cantidad</label>
 
 												<div class="input-group mb-3">
 													<span class="input-group-text">Qty</span>
@@ -84,7 +84,11 @@
 												</div>
 											</div>
 										</div>
-										<button type="submit" class="btn btn-primary">Submit</button>
+										<?php if ($alm->invoiceid > 0) :?>
+											<button type="submit" class="btn btn-primary">Actualizar</button>
+										<? else :?>
+											<button type="submit" class="btn btn-primary">Guardar</button>
+										<?endif ?>
 									</form>
 								</div>
 							</div>
@@ -107,13 +111,13 @@
 											</a>
 
 											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="#">Action</a>
-												<a class="dropdown-item" href="#">Another action</a>
+												<a class="dropdown-item" href="#">Acción</a>
+												<a class="dropdown-item" href="#">Otra acción</a>
 												<a class="dropdown-item" href="#">Something else here</a>
 											</div>
 										</div>
 									</div>
-									<h5 class="card-title mb-0">Billing information</h5>
+									<h5 class="card-title mb-0">Información de facturación</h5>
 								</div>
 								<div class="card-body">
 									<div class="row g-0">
@@ -121,7 +125,7 @@
 											<img src="Assets/img/avatars/administrator.jpg" width="64" height="64" class="rounded-circle mt-2" alt="Angelica Ramos">
 										</div>
 										<div class="col-sm-9 col-xl-12 col-xxl-8">
-											<strong>Billing user</strong>
+											<strong>Usuario de facturación</strong>
 											<p><?php echo $alm->fname; ?></p>
 										</div>
 									</div>
@@ -129,11 +133,11 @@
 									<table class="table table-sm my-2">
 										<tbody>
 											<tr>
-												<th>Company</th>
+												<th>Nombre de compañía</th>
 												<td><?php echo $alm->companyname; ?></td>
 											</tr>
 											<tr>
-												<th>Occupation</th>
+												<th>Cargo</th>
 												<td><?php echo $alm->userrol; ?></td>
 											</tr>
 											<tr>
@@ -141,7 +145,7 @@
 												<td><?php echo $alm->useremail; ?></td>
 											</tr>
 											<tr>
-												<th>Phone</th>
+												<th>Teléfono</th>
 												<td><?php echo $alm->userphone; ?></td>
 											</tr>
 											<tr>
@@ -149,8 +153,8 @@
 												<td><?php echo $alm->companyweb; ?></td>
 											</tr>
 											<tr>
-												<th>Status</th>
-												<td><span class="badge bg-success">Active</span></td>
+												<th>Estado</th>
+												<td><span class="badge bg-success">Activo</span></td>
 											</tr>
 										</tbody>
 									</table>

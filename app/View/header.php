@@ -10,7 +10,7 @@ $userDetails = $userClass->userDetails($session_uid);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Portal - Downloads</title>
+    <title>iconPlus Portal</title>
     <link rel="stylesheet" href="Assets/css/modern.css">
     <script src="Assets/js/app.js"></script>
     <script src="Assets/js/settings.js"></script>
@@ -46,7 +46,7 @@ $userDetails = $userClass->userDetails($session_uid);
 				<svg>
 					<use xlink:href="#ion-ios-pulse-strong"></use>
 				</svg>
-				ICON PLUS
+				iconPlus Portal
 			</a>
 			<div class="sidebar-content">
 				<div class="sidebar-user">
@@ -81,7 +81,7 @@ $userDetails = $userClass->userDetails($session_uid);
 					<!-- Menu de Companies -->
 					 <li class="sidebar-item active">
 						<a data-bs-target="#companies" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
-							<i class="align-middle me-2 fas fa-fw fa-city"></i> <span class="align-middle">Companies</span>
+							<i class="align-middle me-2 fas fa-fw fa-city"></i> <span class="align-middle">Compañías</span>
 						</a>
 						<ul id="companies" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
 							<li class="sidebar-item"><a class="sidebar-link" href="?c=Companies">Ver registros</a></li>
@@ -92,7 +92,7 @@ $userDetails = $userClass->userDetails($session_uid);
 					<!-- Menu de Users -->
 					<li class="sidebar-item active">
 						<a data-bs-target="#users" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
-							<i class="align-middle me-2 fas fa-fw fa-users"></i> <span class="align-middle">Users</span>
+							<i class="align-middle me-2 fas fa-fw fa-users"></i> <span class="align-middle">Usuarios</span>
 						</a>
 						<ul id="users" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
 							<li class="sidebar-item"><a class="sidebar-link" href="?c=Users">Ver registros</a></li>
@@ -102,7 +102,7 @@ $userDetails = $userClass->userDetails($session_uid);
 					<!-- Menu de Invoices -->
 					 <li class="sidebar-item active">
 						<a data-bs-target="#invoices" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
-							<i class="align-middle me-2 fas fa-fw fa-file"></i> <span class="align-middle">Invoices</span>
+							<i class="align-middle me-2 fas fa-fw fa-file"></i> <span class="align-middle">Facturas</span>
 						</a>
 						<ul id="invoices" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
 							<li class="sidebar-item"><a class="sidebar-link" href="?c=Invoices">Ver registros</a></li>
@@ -146,7 +146,7 @@ $userDetails = $userClass->userDetails($session_uid);
 							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
 								<div class="dropdown-menu-header">
 									<div class="position-relative">
-										4 New Messages
+										4 Nuevos Mensajes
 									</div>
 								</div>
 								<div class="list-group">
@@ -200,7 +200,7 @@ $userDetails = $userClass->userDetails($session_uid);
 									</a>
 								</div>
 								<div class="dropdown-menu-footer">
-									<a href="#" class="text-muted">Show all messages</a>
+									<a href="#" class="text-muted">Mostrar todos los mensajes</a>
 								</div>
 							</div>
 						</li>
@@ -220,7 +220,7 @@ $userDetails = $userClass->userDetails($session_uid);
 												<i class="ms-1 text-danger fas fa-fw fa-bell"></i>
 											</div>
 											<div class="col-10">
-												<div class="text-dark">Update completed</div>
+												<div class="text-dark">Actualización completada </div>
 												<div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
 												<div class="text-muted small mt-1">2h ago</div>
 											</div>
@@ -263,7 +263,7 @@ $userDetails = $userClass->userDetails($session_uid);
 									</a>
 								</div>
 								<div class="dropdown-menu-footer">
-									<a href="#" class="text-muted">Show all notifications</a>
+									<a href="#" class="text-muted">Mostrar todas las botificaciones</a>
 								</div>
 							</div>
 						</li>
@@ -272,9 +272,9 @@ $userDetails = $userClass->userDetails($session_uid);
 								<i class="align-middle fas fa-cog"></i>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-user"></i> View Profile</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-comments"></i> Contacts</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-chart-pie"></i> Analytics</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-user"></i> Ver Perfil </a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-comments"></i> Contactos</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-chart-pie"></i> Analítica</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-cogs"></i> Settings</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo BASE_URL; ?>logout.php"><i class="align-middle me-1 fas fa-fw fa-arrow-alt-circle-right"></i> Sign out</a>

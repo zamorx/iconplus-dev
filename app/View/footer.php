@@ -20,7 +20,7 @@
 						</div>
 						<div class="col-4 text-end">
 							<p class="mb-0">
-								© 2025 - <a class="text-muted" href="/dashboard-default">ICON PLUS</a>
+								© 2025 - <a class="text-muted" href="/dashboard-default">iconPlus S.A.</a>
 							</p>
 						</div>
 					</div>

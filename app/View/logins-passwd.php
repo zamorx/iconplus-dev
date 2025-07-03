@@ -36,14 +36,14 @@
 												</div>
 											</div>
 											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Verify password</label>
+												<label class="form-label">Verificar password</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-key"></i></span>
 													<input type="password" name="validation-password-confirmation" class="form-control" placeholder="Enter your password again">
 												</div>
 											</div>
 										</div>
-										<button type="submit" class="btn btn-primary">Submit</button>
+										<button type="submit" class="btn btn-primary">Cambiar</button>
 									</form>
 								</div>
 							</div>

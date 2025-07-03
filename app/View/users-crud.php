@@ -94,7 +94,11 @@
 												</div>
 											</div>
 										</div>
-										<button type="submit" class="btn btn-primary">Submit</button>
+										<?php if ($alm->userid > 0) :?>
+											<button type="submit" class="btn btn-primary">Actualizar</button>
+										<? else :?>
+											<button type="submit" class="btn btn-primary">Guardar</button>
+										<?endif ?>
 									</form>
 								</div>
 							</div>

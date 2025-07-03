@@ -24,12 +24,12 @@
 								<table id="datatables-reponsive" class="table table-striped table-hover">
 									<thead>
 										<tr>
-											<th>Date</th>
+											<th>Fecha</th>
 											<th>#</th>
-											<th>Company name</th>
-											<th>Service</th>
-											<th>Status</th>
-											<th>Acciones</th>
+											<th>Nombre de compañía</th>
+											<th>Servicio</th>
+											<th>Estado</th>
+											<th class="downloads">Acciones</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -46,18 +46,18 @@
 
 											<?php if ($r->invoiceactive == 1) : ?>
 													<? if ($r->invoicestatus == 2) : ?>
-														<span class="badge bg-success">Paid</span>
+														<span class="badge bg-success">Pagada</span>
 													<? elseif ($r->invoicestatus == 1) : ?>
-														<span class="badge bg-warning">Pending</span>
+														<span class="badge bg-warning">Pendiente</span>
 													<? elseif ($r->invoicestatus == 0):?>
-														<span class="badge bg-secondary">Issued</span>
+														<span class="badge bg-secondary">Emitida</span>
 													<? endif; ?>
 											<? else : ?>
-													<span class="badge bg-danger">Deleted</span>
+													<span class="badge bg-danger">Eliminada</span>
 											<?endif; ?>
 
 											</td>
-											<td>
+											<td class="downloads">
 												<div class="d-inline-block dropdown show">
 													<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
@@ -67,22 +67,22 @@
 														<?php if ($r->invoiceactive == 1) : ?>
 
 															<?if ($r->invoicestatus == 0) : ?>
-															<a class="dropdown-item" href="?c=Invoices&a=Crud&invoiceid=<?php echo $r->invoiceid; ?>">Update</a>
-															<a class="dropdown-item" onclick="return confirm('Are you sure you want to delete this item?');" href="?c=Invoices&a=Eliminar&invoiceid=<?php echo $r->invoiceid; ?>">Delete</a>
-															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>
+															<a class="dropdown-item" href="?c=Invoices&a=Crud&invoiceid=<?php echo $r->invoiceid; ?>">Actualizar</a>
+															<a class="dropdown-item" onclick="return confirm('¿Está seguro que desea eliminar este registro?');" href="?c=Invoices&a=Eliminar&invoiceid=<?php echo $r->invoiceid; ?>">Delete</a>
+															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Estado</a>
 															<? elseif ($r->invoicestatus == 1) : ?>
-															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Status</a>
-															<a class="dropdown-item"  href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">View</a>
-															<a class="dropdown-item" href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $r->invoiceid; ?>">Create pdf</a>
+															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Estado</a>
+															<a class="dropdown-item"  href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Detalles</a>
+															<a class="dropdown-item" href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $r->invoiceid; ?>">Exportar</a>
 															<? else : ?>
-															<a class="dropdown-item"  href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">View</a>
-															<a class="dropdown-item" href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $r->invoiceid; ?>">Create pdf</a>
+															<a class="dropdown-item"  href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Detalles</a>
+															<a class="dropdown-item" href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $r->invoiceid; ?>">Exportar</a>
 																
 															
 															<? endif; ?>
 
 														<? else : ?>
-															<span class="dropdown-item">No Actions</span>
+															<span class="dropdown-item">Sin acciones</span>
 
 														<?endif; ?>
 														
@@ -125,7 +125,7 @@
 											<img src="Assets/img/avatars/<?php echo $userDetails->username; ?>.jpg" width="64" height="64" class="rounded-circle mt-2" alt="Angelica Ramos">
 										</div>
 										<div class="col-sm-9 col-xl-12 col-xxl-8">
-											<strong>About me</strong>
+											<strong>Sobre mi</strong>
 											<p><?php echo $userDetails->aboutme; ?></p>
 										</div>
 									</div>
@@ -133,15 +133,15 @@
 									<table class="table table-sm my-2">
 										<tbody>
 											<tr>
-												<th>Name</th>
+												<th>Nombre</th>
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Company</th>
+												<th>Compañía</th>
 												<td><?php echo $userDetails->companyname; ?></td>
 											</tr>
 											<tr>
-												<th>Occupation</th>
+												<th>Cargo</th>
 												<td><?php echo $userDetails->loginoccupation; ?></td>
 											</tr>
 											<tr>
@@ -149,7 +149,7 @@
 												<td><?php echo $userDetails->email; ?></td>
 											</tr>
 											<tr>
-												<th>Phone</th>
+												<th>Teléfono</th>
 												<td><?php echo $userDetails->loginphone; ?></td>
 											</tr>
 											<tr>
@@ -157,8 +157,8 @@
 												<td>www.iconplus.net</td>
 											</tr>
 											<tr>
-												<th>Status</th>
-												<td><span class="badge bg-success">Active</span></td>
+												<th>Estado</th>
+												<td><span class="badge bg-success">Activo</span></td>
 											</tr>
 										</tbody>
 									</table>
