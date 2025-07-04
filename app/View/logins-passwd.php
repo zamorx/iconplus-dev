@@ -43,7 +43,7 @@
 												</div>
 											</div>
 										</div>
-										<button type="submit" class="btn btn-primary">Cambiar</button>
+										<button type="submit" onclick="return confirm('¿Está seguro que desea cambiar su password?');" class="btn btn-primary">Cambiar</button>
 									</form>
 								</div>
 							</div>

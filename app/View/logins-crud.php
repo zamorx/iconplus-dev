@@ -113,7 +113,7 @@
 											</div>
 										</div>	
 										
-										<button type="submit" id="toastr-clear" class="btn btn-primary">Actualizar</button>
+										<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
 									</form>
 								</div>
 							</div>
@@ -274,41 +274,3 @@
 					</div>
 				</div>
 			</main>
-
-	<script>
-		// Toastr
-		document.addEventListener("DOMContentLoaded", function() {
-			var currentMessageIndex = -1;
-
-			function getMessage() {
-				var messages = [
-					"My name is Inigo Montoya. You killed my father. Prepare to die!",
-					"Are you the six fingered man?",
-					"Inconceivable!",
-					"I do not think that means what you think it means.",
-					"Have fun storming the castle!",
-				];
-				currentMessageIndex++;
-				if (currentMessageIndex === messages.length) {
-					currentMessageIndex = 0;
-				}
-				return messages[currentMessageIndex];
-			};
-			$("#toastr-show").click(function() {
-				var message = $("#toastr-message").val() || getMessage();
-				var title = $("#toastr-title").val() || "";
-				var type = $("#toastr-type").val();
-				toastr[type](message, title, {
-					positionClass: $("input[name=\"toastr-position\"]:checked").val(),
-					closeButton: $("#toastr-close").prop("checked"),
-					progressBar: $("#toastr-progress-bar").prop("checked"),
-					newestOnTop: $("#toastr-newest-on-top").prop("checked"),
-					rtl: $("body").attr("dir") === "rtl" || $("html").attr("dir") === "rtl",
-					timeOut: $("#toastr-duration").val()
-				});
-			});
-			$("#toastr-clear").on("click", function() {
-				toastr.clear();
-			});
-		});
-	</script>

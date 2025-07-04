@@ -85,7 +85,7 @@
 											</div>
 										</div>
 										<?php if ($alm->invoiceid > 0) :?>
-											<button type="submit" class="btn btn-primary">Actualizar</button>
+											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
 										<? else :?>
 											<button type="submit" class="btn btn-primary">Guardar</button>
 										<?endif ?>

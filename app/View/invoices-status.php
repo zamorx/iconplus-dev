@@ -68,7 +68,7 @@
 
 										</div>
 										
-										<button type="submit" class="btn btn-primary">Cambiar</button>
+										<button type="submit" onclick="return confirm('¿Está seguro que desea modificar el estado actual de esta factura?');" class="btn btn-primary">Cambiar</button>
 									</form>
 								</div>
 							</div>
