@@ -24,6 +24,122 @@ $titletotal = $total;
 					<div class="row">
 						<div class="col-xxl-9">
 
+						<?php if($alm->invcurrency == 0): ?>
+
+							<div class="card">
+								<div class="card-body m-sm-3 m-md-5">
+									<div class="mb-4">
+										Hola <strong><?php echo $alm->fname; ?></strong>,
+										<br>
+										Esta es una factura emitida por el monto de <strong><?php $titletotal = number_format($titletotal, 2);  echo "U$ ". $titletotal; ?></strong> a nombre de <?php echo $alm->companyname; ?>
+									</div>
+
+									<div class="row">
+										<div class="col-md-6">
+											<div class="text-muted">Factura No.</div>
+											<strong># <?php echo $alm->invoiceid; ?></strong>
+										</div>
+										<div class="col-md-6 text-md-end">
+											<div class="text-muted">Fecha de emision</div>
+											<strong>
+												<?php $origDate = "$alm->invoicedate"; 
+                                 				$newDate = date("F d, Y", strtotime($origDate)); 
+                                 				echo $newDate; ?>
+											</strong>
+										</div>
+									</div>
+
+									<hr class="my-4">
+
+									<div class="row mb-4">
+										<div class="col-md-6">
+											<div class="text-muted">Cliente</div>
+											<strong>
+												<?php echo $alm->companyname; ?>
+											</strong>
+											<p>
+												<?php echo $alm->companyruc ?> </br>
+												<?php echo $alm->companyaddress; ?> <br>
+												<?php echo $alm->companycity; ?> <br>
+												10000 <br>
+												<?php echo $alm->companycountry; ?> <br>
+												<a href="#">
+													<?php echo $alm->useremail; ?>
+												</a>
+											</p>
+										</div>
+										<div class="col-md-6 text-md-end">
+											<div class="text-muted">Pagar a</div>
+											<strong>
+												ICON PLUS S.A.
+											</strong>
+											<p>
+												J0310000424373</br>
+												Colonia Independencia <br>
+												Managua <br>
+												13011 <br>
+												Nicaragua <br>
+												<a href="#">
+													info@iconplus.net
+												</a>
+											</p>
+										</div>
+									</div>
+
+									<table class="table table-sm">
+										<thead>
+											<tr>
+												<th>Descripción</th>
+												<th>Precio</th>
+												<th class="text-center">Cantidad</th>
+												<th class="text-end">Monto</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><?php echo $alm->servicedescription ?></td>
+												<td><?php $alm->serviceprice = number_format($alm->serviceprice, 2);  echo "U$ ". $alm->serviceprice; ?></td>
+												<td class="text-center"><?php echo $alm->serviceqty ?></td>
+												<td class="text-end"><?php $ammount = number_format($ammount, 2);  echo "U$ ". $ammount; ?></td>
+											</tr>
+										
+											<tr>
+												<th>&nbsp;</th>
+												<th>&nbsp;</th>
+												<th>Subtotal </th>
+												<th class="text-end"><?php $subtotal = number_format($subtotal, 2);  echo "U$ ". $subtotal; ?></th>
+											</tr>
+											<tr>
+												<th>&nbsp;</th>
+												<th>&nbsp;</th>
+												<th>IVA </th>
+												<th class="text-end"><?php $iva = number_format($iva, 2);  echo "U$ ". $iva; ?></th>
+											</tr>
+											<tr>
+												<th>&nbsp;</th>
+												<th>&nbsp;</th>
+												<th>Total </th>
+												<th class="text-end"><?php $total = number_format($total, 2);  echo "U$ ". $total; ?></th>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="text-center">
+										<p class="text-sm">
+											<strong>Extra note:</strong>
+											Please send all items at the same time to the shipping address.
+											Thanks in advance.
+										</p>
+
+										<a href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $alm->invoiceid; ?>" class="btn btn-primary">
+											Exportar a pdf
+										</a>
+									</div>
+								</div>
+							</div>
+
+						<?php else: ?>
+
 							<div class="card">
 								<div class="card-body m-sm-3 m-md-5">
 									<div class="mb-4">
@@ -135,6 +251,8 @@ $titletotal = $total;
 									</div>
 								</div>
 							</div>
+
+						<?php endif ?>
 							
 						</div>
 
