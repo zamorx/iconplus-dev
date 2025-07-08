@@ -121,7 +121,7 @@
 						<!-- End Actualizar Form Card -->
 
 						<!-- Register Form Card -->
-						<?else: ?>
+						<?php else: ?>
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title"><?php echo $alm->uid != null ? $alm->fname : 'Nuevo Registro'; ?></h5>
@@ -195,7 +195,7 @@
 									</form>
 								</div>
 							</div>
-						<?endif; ?>
+						<?php endif; ?>
 						<!-- End Register Form Card -->
 							
 						</div>

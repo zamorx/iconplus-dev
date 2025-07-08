@@ -86,9 +86,9 @@
 										</div>
 										<?php if ($alm->invoiceid > 0) :?>
 											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
-										<? else :?>
+										<?php else :?>
 											<button type="submit" class="btn btn-primary">Guardar</button>
-										<?endif ?>
+										<?php endif ?>
 									</form>
 								</div>
 							</div>
@@ -174,7 +174,7 @@
 								</div>
 								</div>
 
-							<?endif ?>
+							<?php endif ?>
 						</div>
 					</div>
 				</div>

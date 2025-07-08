@@ -49,11 +49,11 @@
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-check"></i></span>
 													<select name="defaultuser" id="defaultuser" value="<?php echo $alm->defaultuser; ?>" class="form-control">
-														<?if($alm->userid == $alm->defaultuser):?>
+														<?php if($alm->userid == $alm->defaultuser):?>
 															<option value="1" selected>Billing user enable</option>
-														<?else:?>
+														<?php else:?>
 															<option value="0" selected>Billing user disable</option>
-														<?endif;?>
+														<?php endif;?>
 													</select>
 												</div>
 												
@@ -96,9 +96,9 @@
 										</div>
 										<?php if ($alm->userid > 0) :?>
 											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
-										<? else :?>
+										<?php else :?>
 											<button type="submit" class="btn btn-primary">Guardar</button>
-										<?endif ?>
+										<?php endif ?>
 									</form>
 								</div>
 							</div>
@@ -106,7 +106,7 @@
 						</div>
 
 						<div class="col-xxl-3">
-							<?if ($alm->userid > 0):?>
+							<?php if ($alm->userid > 0):?>
 							<div class="card">
 								<img class="card-img-top" src="Assets/img/photos/splash-5.jpg" alt="Unsplash">
 								<div class="card-header">
@@ -122,7 +122,7 @@
 									<li class="list-group-item"><span class="badge bg-success">Active</span></li>
 								</ul>
 							</div>
-							<? else:?>
+							<?php else:?>
 
 							<div class="card">
 								<div class="card-header">
@@ -189,7 +189,7 @@
 									</table>
 								</div>
 							</div>
-							<?endif?>
+							<?php endif?>
 						</div>
 					</div>
 				</div>

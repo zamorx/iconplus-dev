@@ -45,16 +45,16 @@
 											<td>
 
 											<?php if ($r->invoiceactive == 1) : ?>
-													<? if ($r->invoicestatus == 2) : ?>
+													<?php if ($r->invoicestatus == 2) : ?>
 														<span class="badge bg-success">Pagada</span>
-													<? elseif ($r->invoicestatus == 1) : ?>
+													<?php elseif ($r->invoicestatus == 1) : ?>
 														<span class="badge bg-warning">Pendiente</span>
-													<? elseif ($r->invoicestatus == 0):?>
+													<?php elseif ($r->invoicestatus == 0):?>
 														<span class="badge bg-secondary">Emitida</span>
-													<? endif; ?>
-											<? else : ?>
+													<?php endif; ?>
+											<?php else : ?>
 													<span class="badge bg-danger">Eliminada</span>
-											<?endif; ?>
+											<?php endif; ?>
 
 											</td>
 											<td class="downloads">
@@ -66,25 +66,25 @@
 													<div class="dropdown-menu dropdown-menu-end">
 														<?php if ($r->invoiceactive == 1) : ?>
 
-															<?if ($r->invoicestatus == 0) : ?>
+															<?php if ($r->invoicestatus == 0) : ?>
 															<a class="dropdown-item" href="?c=Invoices&a=Crud&invoiceid=<?php echo $r->invoiceid; ?>">Actualizar</a>
 															<a class="dropdown-item" onclick="return confirm('¿Está seguro que desea eliminar este registro?');" href="?c=Invoices&a=Eliminar&invoiceid=<?php echo $r->invoiceid; ?>">Delete</a>
 															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Estado</a>
-															<? elseif ($r->invoicestatus == 1) : ?>
+															<?php elseif ($r->invoicestatus == 1) : ?>
 															<a class="dropdown-item" href="?c=Invoices&a=goStatus&invoiceid=<?php echo $r->invoiceid; ?>">Estado</a>
 															<a class="dropdown-item"  href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Detalles</a>
 															<a class="dropdown-item" href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $r->invoiceid; ?>">Exportar</a>
-															<? else : ?>
+															<?php else : ?>
 															<a class="dropdown-item"  href="?c=Invoices&a=Details&invoiceid=<?php echo $r->invoiceid; ?>">Detalles</a>
 															<a class="dropdown-item" href="?c=Invoices&a=convertPDF&invoiceid=<?php echo $r->invoiceid; ?>">Exportar</a>
 																
 															
-															<? endif; ?>
+															<?php endif; ?>
 
-														<? else : ?>
+														<?php else : ?>
 															<span class="dropdown-item">Sin acciones</span>
 
-														<?endif; ?>
+														<?php endif; ?>
 														
 														
 													</div>

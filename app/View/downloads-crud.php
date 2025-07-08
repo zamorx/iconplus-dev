@@ -75,9 +75,9 @@
 										
 										<?php if ($alm->downloadid > 0) :?>
 											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
-										<? else :?>
+										<?php else :?>
 											<button type="submit" class="btn btn-primary">Guardar</button>
-										<?endif ?>
+										<?php endif ?>
 									</form>
 								</div>
 							</div>

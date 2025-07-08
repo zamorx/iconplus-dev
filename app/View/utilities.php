@@ -33,7 +33,7 @@
 									</thead>
 									<tbody>
 										<?php foreach ($this->model->Listar() as $r) : ?>
-											<? if ($r->categoryid == 5) : ?>	
+											<?php if ($r->categoryid == 5) : ?>	
 										<tr>
 											<td>
 												<img src="Assets/img/logos/<?php echo $r->osname; ?>.jpg" width="48" height="48" class="rounded-circle me-2" alt="Avatar">
@@ -54,7 +54,7 @@
 											</td>
 											
 										</tr>
-										<? endif; ?>
+										<?php endif; ?>
 										<?php endforeach; ?>
 									</tbody>
 								</table>
