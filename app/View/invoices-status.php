@@ -52,15 +52,15 @@
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-file-export"></i></span>
 													<select name="invoicestatus" id="invoicestatus" value="<?php echo $alm->invoicestatus; ?>" class="form-control">
-														<?if ($alm->invoicestatus == 0) : ?>
+														<?php if ($alm->invoicestatus == 0) : ?>
 															<option value="0" selected>Emitida</option>
 															<option value="1">Pendiente</option>
 														
-														<?endif; ?>
-														<?if ($alm->invoicestatus == 1) : ?>
+														<?php endif; ?>
+														<?php if ($alm->invoicestatus == 1) : ?>
 															<option value="1" selected>Pendiente</option>
 															<option value="2">Pagada</option>
-														<?endif; ?>
+														<?php endif; ?>
 													</select>
 												</div>
 											</div>
