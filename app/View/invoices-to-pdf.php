@@ -12,7 +12,12 @@ $monto = $alm->serviceprice * $alm->serviceqty;
 $iva = $monto * 0.15;
 $total = $monto + $iva;
 
-setlocale(LC_MONETARY,"en_US");
+// Format the amounts to two decimal places
+$monto = number_format($monto, 2);
+$iva = number_format($iva, 2);
+$total = number_format($total, 2);
+$alm->serviceprice = number_format($alm->serviceprice, 2);
+
 
 $newDate = date("d/m/Y", strtotime($alm->invoicedate)); 
 
@@ -170,9 +175,9 @@ if ($alm->invcurrency == 0) {
             <tbody>
                 <tr valign="top">
                     <td style="border-bottom:1px solid #CBD2D6;padding:10px 10px;text-align:left;border-top:0px">'.$alm->servicedescription.'</th>
-                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">'.money_format("U%n", $alm->serviceprice).'</th>
+                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">U$ '.$alm->serviceprice.'</th>
                     <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">'.$alm->serviceqty.'</th>
-                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">'.money_format("U%n", $monto).'</th>
+                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">U$ '.$monto.'</th>
                 </tr>
     
                 <tr>
@@ -181,7 +186,7 @@ if ($alm->invcurrency == 0) {
                     <td></td>
                     <th style="text-align:right;padding:25px 10px 0px 0px;vertical-align:top" colSpan="1">
                         Subtotal</th>
-                    <td style="text-align:right;padding:25px 10px 0px 0px;vertical-align:top" colSpan="1">'.money_format("U%n", $monto).'
+                    <td style="text-align:right;padding:25px 10px 0px 0px;vertical-align:top" colSpan="1">U$ '.$monto.'
                     </td>
                 </tr>
                 <tr>
@@ -190,7 +195,7 @@ if ($alm->invcurrency == 0) {
                     <td></td>
                     <th style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">IVA
                     </th>
-                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">'.money_format("U%n", $iva).'</td>
+                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">U$ '.$iva.'</td>
                 </tr>
                 <tr>
     
@@ -198,7 +203,7 @@ if ($alm->invcurrency == 0) {
                     <td></td>
                     <th style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">Total
                     </th>
-                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">'.money_format("U%n", $total).'
+                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">U$ '.$total.'
                     </td>
                 </tr>
     
@@ -389,9 +394,9 @@ if ($alm->invcurrency == 0) {
             <tbody>
                 <tr valign="top">
                     <td style="border-bottom:1px solid #CBD2D6;padding:10px 10px;text-align:left;border-top:0px">'.$alm->servicedescription.'</th>
-                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">'.money_format("C%n", $alm->serviceprice).'</th>
+                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">C$ '.$alm->serviceprice.'</th>
                     <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">'.$alm->serviceqty.'</th>
-                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">'.money_format("C%n", $monto).'</th>
+                    <td style="border-bottom:1px solid #CBD2D6;padding:22px 10px;text-align:right;border-top:0px">C$ '.$monto.'</th>
                 </tr>
     
                 <tr>
@@ -400,7 +405,7 @@ if ($alm->invcurrency == 0) {
                     <td></td>
                     <th style="text-align:right;padding:25px 10px 0px 0px;vertical-align:top" colSpan="1">
                         Subtotal</th>
-                    <td style="text-align:right;padding:25px 10px 0px 0px;vertical-align:top" colSpan="1">'.money_format("C%n", $monto).'
+                    <td style="text-align:right;padding:25px 10px 0px 0px;vertical-align:top" colSpan="1">C$ '.$monto.'
                     </td>
                 </tr>
                 <tr>
@@ -409,7 +414,7 @@ if ($alm->invcurrency == 0) {
                     <td></td>
                     <th style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">IVA
                     </th>
-                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">'.money_format("C%n", $iva).'</td>
+                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">C$ '.$iva.'</td>
                 </tr>
                 <tr>
     
@@ -417,7 +422,7 @@ if ($alm->invcurrency == 0) {
                     <td></td>
                     <th style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">Total
                     </th>
-                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">'.money_format("C%n", $total).'
+                    <td style="text-align:right;padding:10px 10px 0px 0px;vertical-align:top" colSpan="1">C$ '.$total.'
                     </td>
                 </tr>
     
