@@ -180,7 +180,7 @@
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-cog"></i></span>
 												
-												<select id="idrol" name="idrol" value="<?php echo $alm->namerol; ?>" class="form-control">
+												<select id="idrol" name="idrol" value="<?php echo $alm->idrol; ?>" class="form-control">
                                     				<option value="<?php echo $alm->idrol; ?>"><?php echo $alm->uid != null ? $alm->namerol : 'Seleccione un role'; ?></option>
                                     				<?php foreach ($this->model->ListRole() as $r) : ?>
                                         				<option value="<?php echo $r->idrol?>"><?php echo $r->namerol; ?></option>

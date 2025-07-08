@@ -35,7 +35,7 @@
 												<label class="form-label">Nombre de compañia</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-building"></i></span>										
-													<select id="companyid" name="companyid" value="<?php echo $alm->companyname; ?>" class="form-control">
+													<select id="companyid" name="companyid" value="<?php echo $alm->companyid; ?>" class="form-control">
                                     				<option value="<?php echo $alm->companyid; ?>"><?php echo $alm->userid != null ? $alm->companyname : 'Select company name'; ?></option>
                                     				<?php foreach ($this->model->ListCompanies() as $r) : ?>
                                         				<option value="<?php echo $r->companyid?>"><?php echo $r->companyname; ?></option>
@@ -45,17 +45,6 @@
 											</div>
 
 											<div class="mb-3 col-md-6">
-												<label class="form-label">Billing config</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-check"></i></span>
-													<select name="defaultuser" id="defaultuser" value="<?php echo $alm->defaultuser; ?>" class="form-control">
-														<?php if($alm->userid == $alm->defaultuser):?>
-															<option value="1" selected>Billing user enable</option>
-														<?php else:?>
-															<option value="0" selected>Billing user disable</option>
-														<?php endif;?>
-													</select>
-												</div>
 												
 
 											</div>
