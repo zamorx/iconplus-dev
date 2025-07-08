@@ -35,7 +35,7 @@
 												
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 far fa-fw fa-building"></i></span>
-													<select id="companyid" name="companyid" value="<?php echo $alm->companyname; ?>" class="form-control">
+													<select id="companyid" name="companyid" value="<?php echo $alm->companyid; ?>" class="form-control">
                                     				<option value="<?php echo $alm->companyid; ?>"><?php echo $alm->invoiceid != null ? $alm->companyname : 'Select company name'; ?></option>
                                     				<?php foreach ($this->model->ListCompanies() as $r) : ?>
                                         				<option value="<?php echo $r->companyid?>"><?php echo $r->companyname; ?></option>

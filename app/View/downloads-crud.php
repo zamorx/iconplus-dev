@@ -33,7 +33,7 @@
 											<label class="form-label">Categoría</label>
 											<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-folder"></i></span>
-											<select id="categoryid" name="categoryid" value="<?php echo $alm->categoryname; ?>" class="form-control">
+											<select id="categoryid" name="categoryid" value="<?php echo $alm->categoryid; ?>" class="form-control">
                                                 <option value="<?php echo $alm->categoryid; ?>"><?php echo $alm->downloadid != null ? $alm->categoryname : 'Select a category'; ?></option>
                                                     <?php foreach ($this->model->ListCategory() as $r) : ?>
                                                 <option value="<?php echo $r->categoryid ?>"><?php echo $r->categoryname; ?></option>
