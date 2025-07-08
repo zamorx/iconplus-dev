@@ -1,9 +1,10 @@
 
 <?php 
 $ammount = $alm->serviceprice * $alm->serviceqty;
+$subtotal = $ammount;
 $iva = $ammount * 0.15;
 $total = $ammount + $iva;
-setlocale(LC_MONETARY,"en_US");
+$titletotal = $total;
 ?>
 			<main class="content">
 				<div class="container-fluid">
@@ -28,7 +29,7 @@ setlocale(LC_MONETARY,"en_US");
 									<div class="mb-4">
 										Hola <strong><?php echo $alm->fname; ?></strong>,
 										<br>
-										Esta es una factura emitida por el monto de <strong><?php echo money_format("C%n", $total);?></strong> a nombre de <?php echo $alm->companyname; ?>
+										Esta es una factura emitida por el monto de <strong><?php $titletotal = number_format($titletotal, 2);  echo "C$ ". $titletotal; ?></strong> a nombre de <?php echo $alm->companyname; ?>
 									</div>
 
 									<div class="row">
@@ -95,28 +96,28 @@ setlocale(LC_MONETARY,"en_US");
 										<tbody>
 											<tr>
 												<td><?php echo $alm->servicedescription ?></td>
-												<td><?php echo money_format("C%n", $alm->serviceprice);?></td>
+												<td><?php $alm->serviceprice = number_format($alm->serviceprice, 2);  echo "C$ ". $alm->serviceprice; ?></td>
 												<td class="text-center"><?php echo $alm->serviceqty ?></td>
-												<td class="text-end"><?php echo money_format("C%n", $ammount);?></td>
+												<td class="text-end"><?php $ammount = number_format($ammount, 2);  echo "C$ ". $ammount; ?></td>
 											</tr>
 										
 											<tr>
 												<th>&nbsp;</th>
 												<th>&nbsp;</th>
 												<th>Subtotal </th>
-												<th class="text-end"><?php echo money_format("C%n", $ammount);?></th>
+												<th class="text-end"><?php $subtotal = number_format($subtotal, 2);  echo "C$ ". $subtotal; ?></th>
 											</tr>
 											<tr>
 												<th>&nbsp;</th>
 												<th>&nbsp;</th>
 												<th>IVA </th>
-												<th class="text-end"><?php echo money_format("C%n", $iva);?></th>
+												<th class="text-end"><?php $iva = number_format($iva, 2);  echo "C$ ". $iva; ?></th>
 											</tr>
 											<tr>
 												<th>&nbsp;</th>
 												<th>&nbsp;</th>
 												<th>Total </th>
-												<th class="text-end"><?php echo money_format("C%n", $total);?></th>
+												<th class="text-end"><?php $total = number_format($total, 2);  echo "C$ ". $total; ?></th>
 											</tr>
 										</tbody>
 									</table>
