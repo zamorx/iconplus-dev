@@ -1,4 +1,6 @@
 .DS_Store
 index.html
+login/config.php
+app/Models/config.php
 config.php
 config-local.php
