@@ -164,9 +164,17 @@ $titletotal = $total;
 										<div class="col-md-6 text-md-end">
 											<div class="text-muted">Fecha de emision</div>
 											<strong>
-												<?php $origDate = "$alm->invoicedate"; 
-                                 				$newDate = date("F d, Y", strtotime($origDate)); 
-                                 				echo $newDate; ?>
+												<?php 
+												setlocale(LC_TIME, 'spanish');
+												$default_local_date = ucwords(utf8_encode(strftime("%A, %d de %B del %Y",strtotime($alm->invoicedate))));
+
+												$date_connectors_capital = array('De', 'Del');
+												$date_connectors_lower = array('de', 'del');
+
+												$local_date = str_replace($date_connectors_capital, $date_connectors_lower, $default_local_date);
+
+												echo $local_date;
+											?>
 											</strong>
 										</div>
 									</div>
