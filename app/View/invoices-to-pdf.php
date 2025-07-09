@@ -19,7 +19,13 @@ $total = number_format($total, 2);
 $alm->serviceprice = number_format($alm->serviceprice, 2);
 
 
-$newDate = date("d/m/Y", strtotime($alm->invoicedate)); 
+setlocale(LC_TIME, 'spanish');
+$default_local_date = ucwords(utf8_encode(strftime("%A, %d de %B del %Y",strtotime($alm->invoicedate))));
+
+$date_connectors_capital = array('De', 'Del');
+$date_connectors_lower = array('de', 'del');
+
+$local_date = str_replace($date_connectors_capital, $date_connectors_lower, $default_local_date);
 
 if ($alm->invcurrency == 0) {
     $html = ('<!DOCTYPE html>
@@ -75,7 +81,7 @@ if ($alm->invcurrency == 0) {
             <tbody>
               
                 <tr valign="top">
-                    <td width="80%">
+                    <td width="70%">
                         <table width="100%" cellSpacing="0" cellPadding="0" border="0">
                             <tbody>
                             <tr>
@@ -131,7 +137,7 @@ if ($alm->invcurrency == 0) {
                             </tbody>
                         </table>
                     </td>
-                    <td width="20%" valign="right">
+                    <td width="30%" valign="right">
                         <table>
                             <tbody>
                                 <tr>
@@ -141,7 +147,7 @@ if ($alm->invcurrency == 0) {
                                 </tr>
                                 <tr>
                                     <td style="padding:0 10px 0 0;text-align:left;">
-                                     '.$newDate.'
+                                     '.$local_date.'
                                      
                                     </td>
                                 </tr>
@@ -294,7 +300,7 @@ if ($alm->invcurrency == 0) {
             <tbody>
               
                 <tr valign="top">
-                    <td width="80%">
+                    <td width="70%">
                         <table width="100%" cellSpacing="0" cellPadding="0" border="0">
                             <tbody>
                             <tr>
@@ -350,7 +356,7 @@ if ($alm->invcurrency == 0) {
                             </tbody>
                         </table>
                     </td>
-                    <td width="20%" valign="right">
+                    <td width="30%" valign="right">
                         <table>
                             <tbody>
                                 <tr>
@@ -360,7 +366,7 @@ if ($alm->invcurrency == 0) {
                                 </tr>
                                 <tr>
                                     <td style="padding:0 10px 0 0;text-align:left;">
-                                     '.$newDate.'
+                                     '.$local_date.'
                                      
                                     </td>
                                 </tr>
