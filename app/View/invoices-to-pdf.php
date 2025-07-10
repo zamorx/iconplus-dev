@@ -81,7 +81,7 @@ if ($alm->invcurrency == 0) {
             <tbody>
               
                 <tr valign="top">
-                    <td width="70%">
+                    <td width="75%">
                         <table width="100%" cellSpacing="0" cellPadding="0" border="0">
                             <tbody>
                             <tr>
@@ -137,7 +137,7 @@ if ($alm->invcurrency == 0) {
                             </tbody>
                         </table>
                     </td>
-                    <td width="30%" valign="right">
+                    <td width="25%" valign="right">
                         <table>
                             <tbody>
                                 <tr>
@@ -300,7 +300,7 @@ if ($alm->invcurrency == 0) {
             <tbody>
               
                 <tr valign="top">
-                    <td width="70%">
+                    <td width="75%">
                         <table width="100%" cellSpacing="0" cellPadding="0" border="0">
                             <tbody>
                             <tr>
@@ -356,7 +356,7 @@ if ($alm->invcurrency == 0) {
                             </tbody>
                         </table>
                     </td>
-                    <td width="30%" valign="right">
+                    <td width="25%" valign="right">
                         <table>
                             <tbody>
                                 <tr>
