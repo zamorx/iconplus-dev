@@ -14,7 +14,6 @@ $userDetails = $userClass->userDetails($session_uid);
     <link rel="stylesheet" href="Assets/css/modern.css">
     <script src="Assets/js/app.js"></script>
     <script src="Assets/js/settings.js"></script>
-	<script src="js/settings.js"></script>
 	<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
 	
 	
@@ -23,7 +22,6 @@ $userDetails = $userClass->userDetails($session_uid);
 			opacity: 0;
 		}
 	</style>
-	<script src="js/settings.js"></script>
 	<!-- END SETTINGS -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120946860-7"></script>
