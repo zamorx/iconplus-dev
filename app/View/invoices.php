@@ -37,6 +37,7 @@
 										<tr>
 											<td>
 												<img src="Assets/img/logos/<?php echo $r->companyid; ?>.jpg" width="48" height="48" class="rounded-circle me-2" alt="<?php echo $r->companyname; ?>">
+												<?php $r->invoicedate = date('d-m-Y', strtotime($r->invoicedate)); ?>	
 												<?php echo $r->invoicedate; ?>
 											</td>
 											<td><?php echo $r->invoiceid; ?></td>
