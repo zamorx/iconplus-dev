@@ -27,7 +27,6 @@
 				</div>
 			</footer>
 
-			<script src="Assets/js/charts.js"></script>
 			<!-- Termina el Footer -->
 
 		</div>

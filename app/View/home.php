@@ -378,3 +378,5 @@
 
 				</div>
 			</main>
+
+			<script src="Assets/js/charts.js"></script>
