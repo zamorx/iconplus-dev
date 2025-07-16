@@ -26,11 +26,11 @@
 									</h6>
 								</div>
 								<div class="card-body">
-									<form action="?c=Invoices&a=Guardar" method="post" enctype="multipart/form-data">
+									<form id="validation-form" action="?c=Invoices&a=Guardar" method="post" enctype="multipart/form-data">
                             			<input type="hidden" name="invoiceid" value="<?php echo $alm->invoiceid; ?>" />
 										<div class="row">
 
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Nombre de compañía</label>	
 												
 												<div class="input-group mb-3">
@@ -44,7 +44,7 @@
 												</div>
 												
 											</div>
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Fecha</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 far fa-fw fa-calendar-plus"></i></span>
@@ -52,20 +52,20 @@
 												</div>
 											</div>
 										</div>
-										<div class="mb-3">
+										<div class="mb-3 error-placeholder">
 											<label class="form-label">Servicio</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 far fa-fw fa-keyboard"></i></span>
 												<input type="text-box" name="invoiceservice" value="<?php echo $alm->invoiceservice; ?>" class="form-control" placeholder="Enter service name">
 											</div>
 										</div>
-										<div class="mb-3">
+										<div class="mb-3 error-placeholder">
 											<label class="form-label">Descripción del servicio</label>
 											
 											<textarea id="servicedescription" name="servicedescription" class="form-control" placeholder="Enter a service description"><?php echo $alm->servicedescription; ?></textarea>
 										</div>
 										<div class="row">
-											<div class="mb-3 col-md-6"> 
+											<div class="mb-3 col-md-6 error-placeholder"> 
 												<label class="form-label">Precio</label>
 
 
@@ -75,7 +75,7 @@
 												</div>
 
 											</div>
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Cantidad</label>
 
 												<div class="input-group mb-3">
@@ -189,3 +189,5 @@
         .then(editor => { console.log(editor); })
         .catch(error => { console.error(error); });
 </script>
+
+<script src="Assets/js/validation-forms.js"></script>

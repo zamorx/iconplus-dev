@@ -26,12 +26,12 @@
 									</h6>
 								</div>
 								<div class="card-body">
-									<form action="?c=Users&a=Guardar" method="post" enctype="multipart/form-data">
+									<form id="validation-form" action="?c=Users&a=Guardar" method="post" enctype="multipart/form-data">
                             			<input type="hidden" name="userid" value="<?php echo $alm->userid; ?>" />	
 
 										<div class="row">
 
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Nombre de compañia</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-building"></i></span>										
@@ -52,14 +52,14 @@
 										</div>
 
 										<div class="row">
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Nombre completo</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-address-card"></i></span>
 													<input type="text-box" name="fname" value="<?php echo $alm->fname; ?>" class="form-control" placeholder="Enter full name">
 												</div>
 											</div>
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Cargo</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-cog"></i></span>
@@ -68,14 +68,14 @@
 											</div>
 										</div>
 										<div class="row">
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Email</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-envelope"></i></span>
 													<input type="text-box" name="useremail" value="<?php echo $alm->useremail; ?>" class="form-control" placeholder="Enter an email">
 												</div>
 											</div>
-											<div class="mb-3 col-md-6">
+											<div class="mb-3 col-md-6 error-placeholder">
 												<label class="form-label">Teléfono</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-phone"></i></span>
@@ -183,3 +183,5 @@
 					</div>
 				</div>
 			</main>
+
+			<script src="Assets/js/validation-forms.js"></script>

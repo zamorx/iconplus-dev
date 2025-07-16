@@ -26,38 +26,38 @@
 									</h6>
 								</div>
 								<div class="card-body">
-									<form action="?c=Companies&a=Guardar" method="post" enctype="multipart/form-data">
+									<form id="validation-form" action="?c=Companies&a=Guardar" method="post" enctype="multipart/form-data">
                             			<input type="hidden" name="companyid" value="<?php echo $alm->companyid; ?>" />
 										<div class="row">
-										<div class="mb-3 col-lg-6">
+										<div class="mb-3 col-lg-6 error-placeholder">
 											<label class="form-label">Nombre de Compañía</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-tag"></i></span>		
 												<input type="text-box" name="companyname" value="<?php echo $alm->companyname; ?>" class="form-control" placeholder="Enter company name">
 											</div>
 										</div>
-										<div class="mb-3 col-lg-6">
+										<div class="mb-3 col-lg-6 error-placeholder">
 											<label class="form-label">Número RUC</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-barcode"></i></span>		
 												<input type="text-box" name="companyruc" value="<?php echo $alm->companyruc; ?>" class="form-control" placeholder="Enter company RUC">
 											</div>
 										</div>
-										<div class="mb-3 col-lg-6">
+										<div class="mb-3 col-lg-6 error-placeholder">
 											<label class="form-label">Dirección</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-map-marker-alt"></i></span>		
 												<input type="text-box" name="companyaddress" value="<?php echo $alm->companyaddress; ?>" class="form-control" placeholder="Enter company address">
 											</div>
 										</div>
-										<div class="mb-3 col-lg-6">
+										<div class="mb-3 col-lg-6 error-placeholder">
 											<label class="form-label">Ciudad</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-city"></i></span>		
 												<input type="text-box" name="companycity" value="<?php echo $alm->companycity; ?>" class="form-control" placeholder="Enter company city">
 											</div>
 										</div>
-										<div class="mb-3 col-lg-6">
+										<div class="mb-3 col-lg-6 error-placeholder">
 											<label class="form-label">País</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-map-marked-alt"></i></span>		
@@ -147,3 +147,5 @@
 					</div>
 				</div>
 			</main>
+
+			<script src="Assets/js/validation-forms.js"></script>
