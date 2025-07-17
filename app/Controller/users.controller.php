@@ -41,6 +41,7 @@ class UsersController
         $alm->userrol = $_REQUEST['userrol'];
         $alm->useremail = $_REQUEST['useremail'];
         $alm->userphone = $_REQUEST['userphone'];
+        $alm->billinguser = $_REQUEST['billinguser'];
         
 
         // SI ID Support ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA Support, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO

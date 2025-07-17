@@ -44,9 +44,30 @@
 												</div>
 											</div>
 
-											<div class="mb-3 col-md-6">
-												
-
+											<div class="mb-3 col-md-6 error-placeholder">
+												<label class="form-label">Billing config</label>
+												<div class="input-group mb-3">
+													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-check"></i></span>
+													<select name="billinguser" id="billinguser" value="<?php echo $alm->billinguser; ?>" class="form-control">
+														<option value="<?php echo $alm->billinguser; ?>">
+															<?php if ($alm->userid != null): ?>
+																<?php if ($alm->billinguser == 1): ?>
+																	Opción activada
+																	<option value="">Desactivar opción</option>
+																<?php else: ?>
+																	Opción desactivada
+																	<option value="1">Activar opción</option>
+																<?php endif; ?>
+																
+															<?php else: ?>
+																Seleccione una opción
+																<option value="1">Activar opción</option>
+															<?php endif; ?>
+														</option>
+															
+															
+													</select>
+												</div>
 											</div>
 
 										</div>

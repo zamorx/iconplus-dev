@@ -9,6 +9,7 @@ class Users
 	public $userrol;
 	public $useremail;
 	public $userphone;
+	public $billinguser;
 
 
 	public function __CONSTRUCT()
@@ -96,7 +97,8 @@ class Users
 						companyid            = ?,
 						userrol            = ?,
 						useremail            = ?,
-						userphone            = ?
+						userphone            = ?,
+						billinguser            = ?
 
 				    WHERE userid = ?";
 
@@ -108,6 +110,7 @@ class Users
 						$data->userrol,
 						$data->useremail,
 						$data->userphone,
+						$data->billinguser,
 						$data->userid
 					)
 				);
@@ -121,8 +124,8 @@ class Users
 	{
 		try 
 		{
-		$sql = "INSERT INTO `tblusers` (fname, companyid, userrol, useremail, userphone, activeuser) 
-		        VALUES (?, ?, ?, ?, ?, 1)";
+		$sql = "INSERT INTO `tblusers` (fname, companyid, userrol, useremail, userphone, billinguser, activeuser) 
+		        VALUES (?, ?, ?, ?, ?, ?, 1)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -131,7 +134,8 @@ class Users
 					$data->companyid,
 					$data->userrol,
 					$data->useremail,
-					$data->userphone
+					$data->userphone,
+					$data->billinguser
                 )
 			);
 		} catch (Exception $e) 
