@@ -41,6 +41,7 @@ class CompaniesController
         $alm->companyaddress = $_REQUEST['companyaddress'];
         $alm->companycity = $_REQUEST['companycity'];
         $alm->companycountry = $_REQUEST['companycountry'];
+        $alm->defaultuser = $_REQUEST['defaultuser'];
 
 
         // SI ID Support ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA Support, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO

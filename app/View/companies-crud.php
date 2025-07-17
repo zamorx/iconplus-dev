@@ -64,6 +64,17 @@
 												<input type="text-box" name="companycountry" value="<?php echo $alm->companycountry; ?>" class="form-control" placeholder="Enter company country">
 											</div>
 										</div>
+										
+											<div class="mb-3 col-md-6 error-placeholder">
+												<label class="form-label">Billing user</label>
+												<div class="input-group mb-3">
+													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-check"></i></span>										
+													<select id="defaultuser" name="defaultuser" value="<?php echo $alm->defaultuser; ?>" class="form-control">
+                                    				<option value="<?php echo $alm->userid; ?>"><?php echo $alm->companyid != null ? $alm->fname : 'Select company name'; ?></option>
+                                				</select>
+												</div>
+											</div>
+											
 										</div>
 										<?php if ($alm->companyid > 0) :?>
 											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>

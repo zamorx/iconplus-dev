@@ -9,6 +9,8 @@ class Companies
 	public $companycity;
 	public $companycountry;
 	public $companyactive;
+	public $userid;
+	public $defaultuser;
 
 	public function __CONSTRUCT()
 	{
@@ -39,12 +41,29 @@ class Companies
 		}
 	}
 
+	public function ListUsers()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM tblcompanies, tblusers WHERE tblusers.companyid = tblcompanies.companyid AND tblusers.billinguser = true");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
 	public function getting($companyid)
 	{
 		try 
 		{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM tblcompanies WHERE companyid = ? and companyactive = true");
+			          ->prepare("SELECT * FROM tblcompanies, tblusers WHERE tblusers.companyid = tblcompanies.companyid AND tblusers.billinguser = true AND tblcompanies.companyid = ?");
 			          
 
 			$stm->execute(array($companyid));
@@ -78,7 +97,8 @@ class Companies
 						companyruc            = ?,
 						companyaddress         = ?,
 						companycity            = ?,
-						companycountry         = ?
+						companycountry         = ?, 
+						defaultuser            = ?
 				    WHERE companyid = ?";
 
 			$this->pdo->prepare($sql)
@@ -89,6 +109,7 @@ class Companies
 						$data->companyaddress,
 						$data->companycity,
 						$data->companycountry,
+						$data->defaultuser,
 						$data->companyid
 					)
 				);
@@ -102,8 +123,8 @@ class Companies
 	{
 		try 
 		{
-		$sql = "INSERT INTO `tblcompanies` (companyname, companyruc, companyaddress, companycity, companycountry, companyactive) 
-		        VALUES (?, ?, ?, ?, ?, 1)";
+		$sql = "INSERT INTO `tblcompanies` (companyname, companyruc, companyaddress, companycity, companycountry, defaultuser, companyactive) 
+		        VALUES (?, ?, ?, ?, ?, ?, 1)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
@@ -112,7 +133,8 @@ class Companies
 					$data->companyruc,
 					$data->companyaddress,
 					$data->companycity,
-					$data->companycountry
+					$data->companycountry,
+					$data->defaultuser
                 )
 			);
 		} catch (Exception $e) 
