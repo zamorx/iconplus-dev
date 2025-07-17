@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					},
 					"companyname": {
 						required: true,
-						minlength: 6,
-						maxlength: 20
+						minlength: 6
 
 					},
 					"companyruc": {
