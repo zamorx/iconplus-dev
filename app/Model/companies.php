@@ -9,7 +9,6 @@ class Companies
 	public $companycity;
 	public $companycountry;
 	public $companyactive;
-	public $userid;
 	public $defaultuser;
 
 	public function __CONSTRUCT()
@@ -41,22 +40,6 @@ class Companies
 		}
 	}
 
-	public function ListUsers()
-	{
-		try
-		{
-			$result = array();
-
-			$stm = $this->pdo->prepare("SELECT * FROM tblcompanies, tblusers WHERE tblusers.companyid = tblcompanies.companyid AND tblusers.billinguser = true");
-			$stm->execute();
-
-			return $stm->fetchAll(PDO::FETCH_OBJ);
-		}
-		catch(Exception $e)
-		{
-			die($e->getMessage());
-		}
-	}
 
 	public function getting($companyid)
 	{

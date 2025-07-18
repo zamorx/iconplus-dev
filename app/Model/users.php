@@ -58,6 +58,23 @@ class Users
 		}
 	}
 
+	public function ListSteps()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM tblcompanies where tblcompanies.defaultuser = 0 AND companyactive = true");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
 	public function getting($userid)
 	{
 		try 

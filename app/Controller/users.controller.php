@@ -67,4 +67,34 @@ class UsersController
         $this->model->Eliminar($_REQUEST['userid']);
         header('Location: ?c=Users');
     }
+
+    public function StepTwo()
+    {
+        $alm = new Users();
+
+        if (isset($_REQUEST['userid'])) {
+            $alm = $this->model->getting($_REQUEST['userid']);
+        }
+
+        require_once 'View/header.php';
+        require_once 'View/users-steptwo.php';
+        require_once 'View/footer.php';
+    }
+
+    public function SaveStepTwo()
+    {
+        $alm = new Users();
+
+        $alm->userid = $_REQUEST['userid'];
+        $alm->fname = $_REQUEST['fname'];
+        $alm->companyid = $_REQUEST['companyid'];
+        $alm->userrol = $_REQUEST['userrol'];
+        $alm->useremail = $_REQUEST['useremail'];
+        $alm->userphone = $_REQUEST['userphone'];
+        $alm->billinguser = $_REQUEST['billinguser'];
+        
+         $this->model->Registrar($alm);
+
+        header('Location: ?c=Companies&a=stepThree&companyid=' . $alm->companyid);
+    }
 }

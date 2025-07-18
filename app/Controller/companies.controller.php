@@ -44,22 +44,47 @@ class CompaniesController
         $alm->defaultuser = $_REQUEST['defaultuser'];
 
 
-        // SI ID Support ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA Support, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO
-
-        $alm->companyid > 0
-            ? $this->model->Actualizar($alm)
-            : $this->model->Registrar($alm);
-
-        //EL CÓDIGO ANTERIOR ES EQUIVALENTE A UTILIZAR CONDICIONALES IF, TAL COMO SE MUESTRA EN EL COMENTARIO A CONTINUACIÓN:
-
-        /*if ($alm->companyid > 0 ) {
+        if ($alm->companyid > 0 ) {
             $this->model->Actualizar($alm);
+            header('Location: ?c=Companies');
         }
         else{
-           $this->model->Registrar($alm); 
-        }*/
+           $this->model->Registrar($alm);
+           header('Location: ?c=Users&a=StepTwo');
+        }
+        
+    }
 
-        header('Location: ?c=Companies');
+    public function stepThree()
+    {
+        $alm = new Companies();
+
+        if (isset($_REQUEST['companyid'])) {
+            $alm = $this->model->getting($_REQUEST['companyid']);
+        }
+
+        require_once 'View/header.php';
+        require_once 'View/companies-stepthree.php';
+        require_once 'View/footer.php';
+    }
+
+    public function SaveStepThree()
+    {
+        $alm = new Companies();
+
+        $alm->companyid = $_REQUEST['companyid'];
+        $alm->companyname = $_REQUEST['companyname'];
+        $alm->companyruc = $_REQUEST['companyruc'];
+        $alm->companyaddress = $_REQUEST['companyaddress'];
+        $alm->companycity = $_REQUEST['companycity'];
+        $alm->companycountry = $_REQUEST['companycountry'];
+        $alm->defaultuser = $_REQUEST['defaultuser'];
+
+
+            $this->model->Actualizar($alm);
+            header('Location: ?c=Companies');
+       
+        
     }
 
     public function Eliminar()

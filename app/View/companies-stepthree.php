@@ -77,7 +77,7 @@
 											
 										</div>
 										<?php if ($alm->companyid > 0) :?>
-											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
+											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Finalizar</button>
 										<?php else :?>
 											<button type="submit" class="btn btn-primary">Siguiente</button>
 										<?php endif ?>
