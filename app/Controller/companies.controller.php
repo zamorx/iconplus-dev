@@ -31,6 +31,27 @@ class CompaniesController
         require_once 'View/footer.php';
     }
 
+    public function Saved()
+    {
+        require_once 'View/header.php';
+        require_once 'View/companies-saved.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Updated()
+    {
+        require_once 'View/header.php';
+        require_once 'View/companies-updated.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Deleted()
+    {
+        require_once 'View/header.php';
+        require_once 'View/companies-deleted.php';
+        require_once 'View/footer.php';
+    }
+
     public function Guardar()
     {
         $alm = new Companies();
@@ -46,7 +67,7 @@ class CompaniesController
 
         if ($alm->companyid > 0 ) {
             $this->model->Actualizar($alm);
-            header('Location: ?c=Companies');
+            header('Location: ?c=Companies&a=Updated');
         }
         else{
            $this->model->Registrar($alm);
@@ -81,15 +102,13 @@ class CompaniesController
         $alm->defaultuser = $_REQUEST['defaultuser'];
 
 
-            $this->model->Actualizar($alm);
-            header('Location: ?c=Companies');
-       
-        
+        $this->model->Actualizar($alm);
+        header('Location: ?c=Companies&a=Saved');
     }
 
     public function Eliminar()
     {
         $this->model->Eliminar($_REQUEST['companyid']);
-        header('Location: ?c=Companies');
+        header('Location: ?c=Companies&a=Deleted');
     }
 }

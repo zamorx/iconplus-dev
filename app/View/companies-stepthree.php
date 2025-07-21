@@ -159,4 +159,6 @@
 				</div>
 			</main>
 
-			<?php require_once 'View/includes/toastr.php'; ?>
+			<input id="toastr-message" name="toastr-message" type="hidden" class="form-control" value="Usuario guardado exitosamente!">
+
+			<?php require_once 'View/includes/toastr-saved.php'; ?>

@@ -31,6 +31,27 @@ class DownloadsController
         require_once 'View/footer.php';
     }
 
+    public function Saved()
+    {
+        require_once 'View/header.php';
+        require_once 'View/downloads-saved.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Updated()
+    {
+        require_once 'View/header.php';
+        require_once 'View/downloads-updated.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Deleted()
+    {
+        require_once 'View/header.php';
+        require_once 'View/downloads-deleted.php';
+        require_once 'View/footer.php';
+    }
+
     public function Guardar()
     {
         $alm = new Downloads();
@@ -43,16 +64,20 @@ class DownloadsController
 
         // SI ID Support ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA Support, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO
 
-        $alm->downloadid > 0
-            ? $this->model->Actualizar($alm)
-            : $this->model->Registrar($alm);
+        if ($alm->downloadid > 0 ) {
+            $this->model->Actualizar($alm);
+            header('Location: ?c=Downloads&a=Updated');
+        }
+        else{
+           $this->model->Registrar($alm);
+           header('Location: ?c=Downloads&a=Saved');
+        }
 
-        header('Location: ?c=Activators');
     }
 
     public function Eliminar()
     {
         $this->model->Eliminar($_REQUEST['downloadid']);
-        header('Location: ?c=Activators');
+        header('Location: ?c=Downloads&a=Deleted');
     }
 }

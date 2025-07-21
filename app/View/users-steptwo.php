@@ -188,4 +188,6 @@
 				</div>
 			</main>
 
-			<?php require_once 'View/includes/toastr.php'; ?>
+			<input id="toastr-message" name="toastr-message" type="hidden" class="form-control" value="Compañía guardada exitosamente!">
+
+			<?php require_once 'View/includes/toastr-saved.php'; ?>

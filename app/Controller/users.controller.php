@@ -31,6 +31,27 @@ class UsersController
         require_once 'View/footer.php';
     }
 
+    public function Saved()
+    {
+        require_once 'View/header.php';
+        require_once 'View/users-saved.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Updated()
+    {
+        require_once 'View/header.php';
+        require_once 'View/users-updated.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Deleted()
+    {
+        require_once 'View/header.php';
+        require_once 'View/users-deleted.php';
+        require_once 'View/footer.php';
+    }
+
     public function Guardar()
     {
         $alm = new Users();
@@ -46,26 +67,21 @@ class UsersController
 
         // SI ID Support ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA Support, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO
 
-        $alm->userid > 0
-            ? $this->model->Actualizar($alm)
-            : $this->model->Registrar($alm);
-
-        //EL CÓDIGO ANTERIOR ES EQUIVALENTE A UTILIZAR CONDICIONALES IF, TAL COMO SE MUESTRA EN EL COMENTARIO A CONTINUACIÓN:
-
-        /*if ($alm->userid > 0 ) {
+        if ($alm->userid > 0 ) {
             $this->model->Actualizar($alm);
+            header('Location: ?c=Users&a=Updated');
         }
         else{
-           $this->model->Registrar($alm); 
-        }*/
+           $this->model->Registrar($alm);
+           header('Location: ?c=Users&a=Saved');
+        }
 
-        header('Location: ?c=Users');
     }
 
     public function Eliminar()
     {
         $this->model->Eliminar($_REQUEST['userid']);
-        header('Location: ?c=Users');
+        header('Location: ?c=Users&a=Deleted');
     }
 
     public function StepTwo()

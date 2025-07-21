@@ -31,6 +31,20 @@ class LoginsController
         require_once 'View/footer.php';
     }
 
+    public function Saved()
+    {
+        require_once 'View/header.php';
+        require_once 'View/logins-saved.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Deleted()
+    {
+        require_once 'View/header.php';
+        require_once 'View/logins-deleted.php';
+        require_once 'View/footer.php';
+    }
+
     public function Guardar()
     {
         $alm = new Logins();
@@ -54,15 +68,14 @@ class LoginsController
             ? $this->model->Actualizar($alm)
             : $this->model->Registrar($alm);
 
-        header('Location: ?c=Logins');
-            
+        header('Location: ?c=Logins&a=Saved');
 
     }
 
     public function Eliminar()
     {
         $this->model->Eliminar($_REQUEST['uid']);
-        header('Location: ?c=Logins');
+        header('Location: ?c=Logins&a=Deleted');
     }
 
     public function passWD()

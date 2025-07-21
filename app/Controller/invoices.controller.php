@@ -31,6 +31,27 @@ class InvoicesController
         require_once 'View/footer.php';
     }
 
+    public function Saved()
+    {
+        require_once 'View/header.php';
+        require_once 'View/invoices-saved.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Updated()
+    {
+        require_once 'View/header.php';
+        require_once 'View/invoices-updated.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Deleted()
+    {
+        require_once 'View/header.php';
+        require_once 'View/invoices-deleted.php';
+        require_once 'View/footer.php';
+    }
+
     public function Guardar()
     {
         $alm = new Invoices();
@@ -45,20 +66,15 @@ class InvoicesController
 
         // SI ID Support ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA Support, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO
 
-        $alm->invoiceid > 0
-            ? $this->model->Actualizar($alm)
-            : $this->model->Registrar($alm);
-
-        //EL CÓDIGO ANTERIOR ES EQUIVALENTE A UTILIZAR CONDICIONALES IF, TAL COMO SE MUESTRA EN EL COMENTARIO A CONTINUACIÓN:
-
-        /*if ($alm->companyid > 0 ) {
+        if ($alm->invoiceid > 0 ) {
             $this->model->Actualizar($alm);
+            header('Location: ?c=Invoices&a=Updated');
         }
         else{
-           $this->model->Registrar($alm); 
-        }*/
+           $this->model->Registrar($alm);
+           header('Location: ?c=Invoices&a=Saved');
+        }
 
-        header('Location: ?c=Invoices');
     }
 
     public function Details()
@@ -117,6 +133,6 @@ class InvoicesController
     public function Eliminar()
     {
         $this->model->Eliminar($_REQUEST['invoiceid']);
-        header('Location: ?c=Invoices');
+        header('Location: ?c=Invoices&a=Deleted');
     }
 }

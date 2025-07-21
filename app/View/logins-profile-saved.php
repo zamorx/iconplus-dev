@@ -202,4 +202,6 @@
 				</div>
 			</main>
 
+			<input id="toastr-message" name="toastr-message" type="hidden" class="form-control" value="Perfil actualizado exitosamente!">
+
 			<?php require_once 'View/includes/toastr-saved.php'; ?>

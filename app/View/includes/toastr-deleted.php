@@ -1,5 +1,5 @@
-<input id="toastr-title" name="toastr-title" type="hidden" class="form-control" value="¡Éxito!">
-<input type="hidden" id="toastr-type" name="toastr-type" value="success" class="form-control">
+<input id="toastr-title" name="toastr-title" type="hidden" class="form-control" value="¡Eliminar!">
+<input type="hidden" id="toastr-type" name="toastr-type" value="error" class="form-control">
 <input type="hidden" id="toastr-duration" name="toastr-duration" value="5000" class="form-control">
 
 <script>
