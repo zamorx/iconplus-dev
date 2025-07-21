@@ -100,8 +100,8 @@
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Compañía</th>
-												<td><?php echo $userDetails->companyname; ?></td>
+												<th>Organización</th>
+												<td><?php echo $userDetails->organizationname; ?></td>
 											</tr>
 											<tr>
 												<th>Cargo</th>
@@ -117,7 +117,7 @@
 											</tr>
 											<tr>
 												<th>Website</th>
-												<td>www.iconplus.net</td>
+												<td><?php echo $userDetails->organizationweb; ?></td>
 											</tr>
 											<tr>
 												<th>Estado</th>

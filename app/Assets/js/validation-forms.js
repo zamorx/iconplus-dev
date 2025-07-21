@@ -22,11 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
 						minlength: 6
 
 					},
-					"companyruc": {
-						required: true,
-						minlength: 14,
-						maxlength: 14
-					},
 					"companyaddress": {
 						required: true,
 						minlength: 6,
@@ -62,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					},
 					"fname": {
 						required: true,
-						minlength: 6,
+						minlength: 3,
 						maxlength: 50
 					},
 					"userrol": {
@@ -76,8 +71,8 @@ document.addEventListener("DOMContentLoaded", function() {
 					},
 					"userphone": {
 						required: true,
-						minlength: 9,
-						maxlength: 14
+						minlength: 14,
+						maxlength: 15
 					},
 					"invoicedate": {
 						required: true,
@@ -99,6 +94,68 @@ document.addEventListener("DOMContentLoaded", function() {
 						number: true,
 						min: 1,
 						max: 10000
+					},
+					"lname": {
+						required: true,
+						minlength: 6,
+						maxlength: 50
+					},
+					"username": {
+						required: true,
+						minlength: 6,
+						maxlength: 50
+					},
+					"idrol": {
+						required: true
+					},
+					"loginphone": {
+						required: true,
+						minlength: 14,
+						maxlength: 15
+					},
+					"loginoccupation": {
+						required: true,
+						minlength: 6,
+						maxlength: 100
+					},
+					"loginaboutme": {
+						required: true,
+						minlength: 10,
+						maxlength: 500
+					},
+					"organizationname": {
+						required: true,
+						minlength: 3,
+						maxlength: 100
+					},
+					"organizationaddress": {
+						required: true,
+						minlength: 6,
+						maxlength: 100
+					},
+					"organizationstate": {
+						required: true,
+						minlength: 2,
+						maxlength: 50
+					},
+					"organizationcountry": {
+						required: true,
+						minlength: 2,
+						maxlength: 50
+					},
+					"organizationphone": {
+						required: true,
+						minlength: 14,
+						maxlength: 15
+					},
+					"organizationemail": {
+						required: true,
+						email: true
+					},
+					"organizationweb": {
+						required: true,
+						minlength: 9,
+						maxlength: 100
 					}
 				},
 				// Errors

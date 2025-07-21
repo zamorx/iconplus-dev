@@ -88,9 +88,9 @@
 											</div>
 										</div>
 										<?php if ($alm->userid > 0) :?>
-											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
+											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary" id="toastr-show">Actualizar</button>
 										<?php else :?>
-											<button type="submit" class="btn btn-primary">Siguiente</button>
+											<button type="submit" class="btn btn-primary" id="toastr-show">Siguiente</button>
 										<?php endif ?>
 									</form>
 								</div>
@@ -155,8 +155,8 @@
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Company</th>
-												<td><?php echo $userDetails->companyname; ?></td>
+												<th>Organización</th>
+												<td><?php echo $userDetails->organizationname; ?></td>
 											</tr>
 											<tr>
 												<th>Occupation</th>
@@ -188,4 +188,4 @@
 				</div>
 			</main>
 
-			<script src="Assets/js/validation-forms.js"></script>
+			<?php require_once 'View/includes/toastr.php'; ?>

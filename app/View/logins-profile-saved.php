@@ -18,7 +18,7 @@
 					<div class="row">
 						<div class="col-xxl-9">
 						<!-- Actualizar Form Card -->
-						<?php if ($alm->uid > 0) : ?>
+						
 							<div class="card">
 								<div class="card-header">
 									<h5 class="card-title"><?php echo $alm->uid != null ? $alm->fname : 'Nuevo Registro'; ?></h5>
@@ -26,7 +26,7 @@
 								</div>
 								<div class="card-body">
 
-									<form id="validation-form" action="?c=Logins&a=Guardar" method="post" enctype="multipart/form-data">
+									<form id="validation-form" action="?c=Logins&a=saveProfile" method="post" enctype="multipart/form-data">
                             			<input type="hidden" name="uid" value="<?php echo $alm->uid; ?>" />
 
 
@@ -38,7 +38,7 @@
 													<input type="text-box" name="fname" value="<?php echo $alm->fname; ?>" class="form-control" placeholder="Enter firts name">
 												</div>
 											</div>
-											<div class="mb-3 col-md-6 error-placeholder">
+											<div class="mb-3 col-md-6 error-placeholder ">
 												<label class="form-label">Apellido</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-plus"></i></span>
@@ -66,7 +66,7 @@
 										
 											<div class="row">
 												<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Nombre de compañia</label>
+												<label class="form-label">Nombre de organización</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-building"></i></span>										
 												<select id="organizationid" name="organizationid" value="<?php echo $alm->organizationid; ?>" class="form-control">
@@ -78,12 +78,19 @@
 												<label class="form-label">Role</label>
 												<div class="input-group mb-3">
 													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-cog"></i></span>
-												<select id="idrol" name="idrol" value="<?php echo $alm->namerol; ?>" class="form-control">
+												<?php if ($userDetails->idrol == 1) : ?>
+													<select id="idrol" name="idrol" value="<?php echo $alm->namerol; ?>" class="form-control">
                                     				<option value="<?php echo $alm->idrol; ?>"><?php echo $alm->uid != null ? $alm->namerol : 'Seleccione un role'; ?></option>
                                     				<?php foreach ($this->model->ListRole() as $r) : ?>
                                         				<option value="<?php echo $r->idrol?>"><?php echo $r->namerol; ?></option>
                                     				<?php endforeach ?>
                                 				</select>
+												<?php else: ?>
+													<select id="idrol" name="idrol" value="<?php echo $alm->namerol; ?>" class="form-control">
+                                    				<option value="<?php echo $alm->idrol; ?>"><?php echo $alm->namerol ; ?></option>
+                                				</select>
+												<?php endif; ?>
+												
 												</div>
 											</div>
 										</div>
@@ -108,95 +115,18 @@
 												<label class="form-label">Acerca de mi</label>
 												<textarea name="aboutme" class="form-control" placeholder="Write somthing about you" rows="5" ><?php echo $alm->aboutme; ?></textarea>
 											</div>
-										</div>
-
-										<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary" id="toastr-show">Actualizar</button>
+										</div>	
+										
+										<button type="submit"  onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary" id="toastr-show">Actualizar</button>
 									</form>
 								</div>
 							</div>
+						</div>
 
 						<!-- End Actualizar Form Card -->
 
-						<!-- Register Form Card -->
-						<?php else: ?>
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title"><?php echo $alm->uid != null ? $alm->fname : 'Nuevo Registro'; ?></h5>
-									<h6 class="card-subtitle text-muted">Complete el formulario llenando todos los campos solicitados.</h6>
-								</div>
-								<div class="card-body">
-
-									<form id="validation-form" action="?c=Logins&a=Guardar" method="post" enctype="multipart/form-data">
-                            			<input type="hidden" name="uid" value="<?php echo $alm->uid; ?>" />
-
-
-										<div class="row">
-											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Nombre</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-address-card"></i></span>
-													<input type="text-box" name="fname" value="<?php echo $alm->fname; ?>" class="form-control" placeholder="Enter firts name">
-												</div>
-											</div>
-											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Apellido</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-plus"></i></span>
-													<input type="text-box" name="lname" value="<?php echo $alm->lname; ?>" class="form-control" placeholder="Enter last name">
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Username</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-at"></i></span>
-													<input type="text-box" name="username" value="<?php echo $alm->username; ?>" class="form-control" placeholder="Enter a username">
-												</div>
-											</div>
-											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Email</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-envelope"></i></span>
-													<input type="text-box" name="email" value="<?php echo $alm->email; ?>" class="form-control" placeholder="Enter email">
-												</div>
-											</div>
-										</div>
-										
-											<div class="row">
-											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Password</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-key"></i></span>
-													<input type="password" name="password" value="<?php echo $alm->password; ?>" class="form-control" placeholder="Enter password">
-												</div>
-											</div>
-											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Role</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-cog"></i></span>
-												
-												<select id="idrol" name="idrol" value="<?php echo $alm->idrol; ?>" class="form-control">
-                                    				<option value="<?php echo $alm->idrol; ?>"><?php echo $alm->uid != null ? $alm->namerol : 'Seleccione un role'; ?></option>
-                                    				<?php foreach ($this->model->ListRole() as $r) : ?>
-                                        				<option value="<?php echo $r->idrol?>"><?php echo $r->namerol; ?></option>
-                                    				<?php endforeach ?>
-                                				</select>
-												</div>
-
-											<!--<input type="text-box" name="idrol" value="<?php echo $alm->idrol; ?>" class="form-control" placeholder="Enter role">-->
-											</div>
-										</div>
-										<button type="submit" class="btn btn-primary" id="toastr-show">Guardar</button>
-									</form>
-								</div>
-							</div>
-						<?php endif; ?>
-						<!-- End Register Form Card -->
-							
-						</div>
-
+						
+					
 
 
 						<!-- User Profile Card -->
@@ -240,7 +170,7 @@
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Organización</th>
+												<th>Compañía</th>
 												<td><?php echo $userDetails->organizationname; ?></td>
 											</tr>
 											<tr>
@@ -272,4 +202,4 @@
 				</div>
 			</main>
 
-			<?php require_once 'View/includes/toastr.php'; ?>
+			<?php require_once 'View/includes/toastr-saved.php'; ?>

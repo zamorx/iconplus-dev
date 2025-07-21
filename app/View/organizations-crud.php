@@ -5,13 +5,13 @@
 
 					<div class="header">
 						<h1 class="header-title">
-							Compañías
+							Settings
 						</h1>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-								<li class="breadcrumb-item"><a href="?c=Companies">Compañías</a></li>
-								<li class="breadcrumb-item active" aria-current="companies"><?php echo $alm->companyid != null ? $alm->companyname  : 'Nuevo Registro'; ?></li>
+								<li class="breadcrumb-item"><a href="#">Organización</a></li>
+								<li class="breadcrumb-item active" aria-current="companies"><?php echo $alm->organizationid != null ? $alm->organizationname  : 'Nuevo Registro'; ?></li>
 							</ol>
 						</nav>
 					</div>
@@ -20,64 +20,76 @@
 
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title"><?php echo $alm->companyid != null ? $alm->companyname : 'Nuevo Registro'; ?></h5>
+									<h5 class="card-title"><?php echo $alm->organizationid != null ? $alm->organizationname : 'Nuevo Registro'; ?></h5>
 									<h6 class="card-subtitle text-muted">
-										<?php echo $alm->companyid != null ? 'Actualice el formulario editando el campo deseado.' : 'Complete el formulario llenando todos los campos solicitados.'; ?>
+										<?php echo $alm->organizationid != null ? 'Actualice el formulario editando el campo deseado.' : 'Complete el formulario llenando todos los campos solicitados.'; ?>
 									</h6>
 								</div>
 								<div class="card-body">
-									<form id="validation-form" action="?c=Companies&a=Guardar" method="post" enctype="multipart/form-data">
-                            			<input type="hidden" name="companyid" value="<?php echo $alm->companyid; ?>" />
+									<form id="validation-form" action="?c=Organizations&a=Guardar" method="post" enctype="multipart/form-data">
+                            			<input type="hidden" name="organizationid" value="<?php echo $alm->organizationid; ?>" />
 										<div class="row">
 										<div class="mb-3 col-lg-6 error-placeholder">
-											<label class="form-label">Nombre de Compañía</label>
+											<label class="form-label">Nombre de Organización</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-tag"></i></span>		
-												<input type="text-box" name="companyname" value="<?php echo $alm->companyname; ?>" class="form-control" placeholder="Enter company name">
+												<input type="text-box" name="organizationname" value="<?php echo $alm->organizationname; ?>" class="form-control" placeholder="Enter organization name">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6 error-placeholder">
-											<label class="form-label">Número RUC</label>
+											<label class="form-label">Employer Identification Number</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-barcode"></i></span>		
-												<input type="text-box" name="companyruc" value="<?php echo $alm->companyruc; ?>" class="form-control" placeholder="Enter company RUC">
+												<input type="text-box" name="organizationruc" value="<?php echo $alm->organizationruc; ?>" class="form-control" placeholder="This field is optional">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6 error-placeholder">
 											<label class="form-label">Dirección</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-map-marker-alt"></i></span>		
-												<input type="text-box" name="companyaddress" value="<?php echo $alm->companyaddress; ?>" class="form-control" placeholder="Enter company address">
+												<input type="text-box" name="organizationaddress" value="<?php echo $alm->organizationaddress; ?>" class="form-control" placeholder="Enter organization address">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6 error-placeholder">
-											<label class="form-label">Ciudad</label>
+											<label class="form-label">Ciudad, Estado Zipcode</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-city"></i></span>		
-												<input type="text-box" name="companycity" value="<?php echo $alm->companycity; ?>" class="form-control" placeholder="Enter company city">
+												<input type="text-box" name="organizationstate" value="<?php echo $alm->organizationstate; ?>" class="form-control" placeholder="e.g. MIAMI, FL 33138">
 											</div>
 										</div>
 										<div class="mb-3 col-lg-6 error-placeholder">
 											<label class="form-label">País</label>
 											<div class="input-group mb-3">
 												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-map-marked-alt"></i></span>		
-												<input type="text-box" name="companycountry" value="<?php echo $alm->companycountry; ?>" class="form-control" placeholder="Enter company country">
+												<input type="text-box" name="organizationcountry" value="<?php echo $alm->organizationcountry; ?>" class="form-control" placeholder="Enter organization country">
 											</div>
 										</div>
 										
-											<div class="mb-3 col-md-6 error-placeholder">
-												<label class="form-label">Billing user</label>
-												<div class="input-group mb-3">
-													<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-user-check"></i></span>										
-													<select id="defaultuser" name="defaultuser" value="<?php echo $alm->defaultuser; ?>" class="form-control">
-                                    				<option value="<?php echo $alm->userid; ?>"><?php echo $alm->companyid != null ? $alm->fname : 'Select company name'; ?></option>
-                                				</select>
-												</div>
+										<div class="mb-3 col-lg-6 error-placeholder">
+											<label class="form-label">Sitio Web</label>
+											<div class="input-group mb-3">
+												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-globe"></i></span>		
+												<input type="text-box" name="organizationweb" value="<?php echo $alm->organizationweb; ?>" class="form-control" placeholder="Enter organization website">
 											</div>
+										</div>
+										<div class="mb-3 col-lg-6 error-placeholder">
+											<label class="form-label">Teléfono</label>
+											<div class="input-group mb-3">
+												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-phone"></i></span>		
+												<input type="text-box" name="organizationphone" value="<?php echo $alm->organizationphone; ?>" class="form-control" placeholder="Enter organization phone number">
+											</div>
+										</div>
+										<div class="mb-3 col-lg-6 error-placeholder">
+											<label class="form-label">Email</label>
+											<div class="input-group mb-3">
+												<span class="input-group-text"><i class="align-middle me-1 fas fa-fw fa-envelope"></i></span>		
+												<input type="email" name="organizationemail" value="<?php echo $alm->organizationemail; ?>" class="form-control" placeholder="Enter organization email">
+											</div>
+										</div>
 											
 										</div>
-										<?php if ($alm->companyid > 0) :?>
-											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary" id="toastr-show">Finalizar</button>
+										<?php if ($alm->organizationid > 0) :?>
+											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary" id="toastr-show">Actualizar</button>
 										<?php else :?>
 											<button type="submit" class="btn btn-primary" id="toastr-show">Siguiente</button>
 										<?php endif ?>

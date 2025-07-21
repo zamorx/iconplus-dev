@@ -142,10 +142,10 @@
 								<i class="align-middle fas fa-cog"></i>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-user"></i> Ver Perfil </a>
+								<a class="dropdown-item" href="?c=Logins&a=Profile&uid=<?php echo $userDetails->uid; ?>"><i class="align-middle me-1 fas fa-fw fa-user"></i> Ver Perfil </a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-comments"></i> Contactos</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-chart-pie"></i> Analítica</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1 fas fa-fw fa-cogs"></i> Settings</a>
+								<a class="dropdown-item" href="?c=Organizations&a=Crud&organizationid=1"><i class="align-middle me-1 fas fa-fw fa-cogs"></i> Settings</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo BASE_URL; ?>logout.php"><i class="align-middle me-1 fas fa-fw fa-arrow-alt-circle-right"></i> Sign out</a>
 							</div>

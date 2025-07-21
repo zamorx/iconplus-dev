@@ -138,8 +138,8 @@
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Compañía</th>
-												<td><?php echo $userDetails->companyname; ?></td>
+												<th>Organización</th>
+												<td><?php echo $userDetails->organizationname; ?></td>
 											</tr>
 											<tr>
 												<th>Cargo</th>

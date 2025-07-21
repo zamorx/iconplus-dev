@@ -74,9 +74,9 @@
 										</div>
 										
 										<?php if ($alm->downloadid > 0) :?>
-											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary">Actualizar</button>
+											<button type="submit" onclick="return confirm('¿Está seguro que desea modificar este registro?');" class="btn btn-primary" id="toastr-show">Actualizar</button>
 										<?php else :?>
-											<button type="submit" class="btn btn-primary">Guardar</button>
+											<button type="submit" class="btn btn-primary" id="toastr-show">Guardar</button>
 										<?php endif ?>
 									</form>
 								</div>
@@ -100,4 +100,4 @@
 				</div>
 			</main>
 
-			<script src="Assets/js/validation-forms.js"></script>
+			<?php require_once 'View/includes/toastr.php'; ?>

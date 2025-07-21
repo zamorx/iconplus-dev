@@ -62,7 +62,7 @@ class Companies
 		try 
 		{
 			$stm = $this->pdo
-			            ->prepare("UPDATE tblcompanies SET companyactive = 0 WHERE companyid = ?");			          
+			            ->prepare("UPDATE tblcompanies, tblusers SET companyactive = 0, tblusers.activeuser = 0 WHERE tblcompanies.companyid = tblusers.companyid AND tblcompanies.companyid = ?");			          
 
 			$stm->execute(array($companyid));
 		} catch (Exception $e) 

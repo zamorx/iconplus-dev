@@ -71,7 +71,7 @@ public function userDetails($uid)
 {
 try{
 $db = getDB();
-$stmt = $db->prepare("SELECT * FROM tbllogins, tblroles, tblcompanies WHERE tbllogins.idrol = tblroles.idrol AND tbllogins.companyid = tblcompanies.companyid AND uid=:uid"); 
+$stmt = $db->prepare("SELECT * FROM tbllogins, tblroles, tblorgs WHERE tbllogins.idrol = tblroles.idrol AND tbllogins.organizationid = tblorgs.organizationid AND uid=:uid"); 
 $stmt->bindParam("uid", $uid,PDO::PARAM_INT);
 $stmt->execute();
 $data = $stmt->fetch(PDO::FETCH_OBJ); //User data

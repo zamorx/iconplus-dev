@@ -3,7 +3,7 @@
 				<svg>
 					<use xlink:href="#ion-ios-pulse-strong"></use>
 				</svg>
-				iconPlus Portal
+				<?php echo $userDetails->organizationname; ?> Portal
 			</a>
 			<div class="sidebar-content">
 				<div class="sidebar-user">

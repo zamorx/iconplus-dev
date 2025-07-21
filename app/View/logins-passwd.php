@@ -43,7 +43,7 @@
 												</div>
 											</div>
 										</div>
-										<button type="submit" onclick="return confirm('¿Está seguro que desea cambiar su password?');" class="btn btn-primary">Cambiar</button>
+										<button type="submit" onclick="return confirm('¿Está seguro que desea cambiar su password?');" class="btn btn-primary" id="toastr-show">Cambiar</button>
 									</form>
 								</div>
 							</div>
@@ -93,8 +93,8 @@
 												<td><?php echo $userDetails->fname; ?> <?php echo $userDetails->lname; ?></td>
 											</tr>
 											<tr>
-												<th>Company</th>
-												<td><?php echo $userDetails->companyname; ?></td>
+												<th>Organización</th>
+												<td><?php echo $userDetails->organizationname; ?></td>
 											</tr>
 											<tr>
 												<th>Occupation</th>
@@ -110,7 +110,7 @@
 											</tr>
 											<tr>
 												<th>Website</th>
-												<td><?php echo $userDetails->companyweb; ?></td>
+												<td><?php echo $userDetails->organizationweb; ?></td>
 											</tr>
 											<tr>
 												<th>Status</th>
@@ -125,5 +125,5 @@
 				</div>
 			</main>
 
-			<script src="Assets/js/validation-forms.js"></script>
+			<?php require_once 'View/includes/toastr.php'; ?>
 

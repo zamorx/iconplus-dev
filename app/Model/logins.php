@@ -10,7 +10,7 @@ class Logins
 	public $password;
 	public $idrol;
 	public $aboutme;
-	public $companyid;
+	public $organizationid;
 	public $loginoccupation;
 	public $loginphone;
 	public $activelogin;
@@ -33,10 +33,28 @@ class Logins
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM tbllogins, tblroles WHERE tbllogins.idrol = tblroles.idrol");
+			$stm = $this->pdo->prepare("SELECT * FROM tbllogins, tblroles WHERE tbllogins.idrol = tblroles.idrol AND TBLLOGINS.activelogin = true");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
+
+	public function Login()
+	{
+		try
+		{
+			$result = array();
+
+			$stm = $this->pdo->prepare("SELECT * FROM tbllogins, tblroles WHERE tbllogins.idrol = tblroles.idrol AND TBLLOGINS.activelogin = true AND username = ? AND password = ?");
+			$stm->execute(array($this->username, hash('sha256', $this->password)));
+
+			return $stm->fetch(PDO::FETCH_OBJ);
 		}
 		catch(Exception $e)
 		{
@@ -61,13 +79,13 @@ class Logins
 		}
 	}
 
-	public function ListCompanies()
+	public function ListOrganizations()
 	{
 		try
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM tblcompanies where companyactive = true");
+			$stm = $this->pdo->prepare("SELECT * FROM tblorgs where organizationactive = true");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -83,7 +101,7 @@ class Logins
 		try 
 		{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM tbllogins, tblroles, tblcompanies WHERE tbllogins.idrol = tblroles.idrol AND tbllogins.companyid = tblcompanies.companyid AND uid = ?");
+			          ->prepare("SELECT * FROM tbllogins, tblroles, tblorgs WHERE tbllogins.idrol = tblroles.idrol AND tbllogins.organizationid = tblorgs.organizationid AND uid = ?");
 			          
 
 			$stm->execute(array($uid));
@@ -119,7 +137,7 @@ class Logins
 						email            = ?,
 						idrol            = ?,
 						aboutme          = ?,
-						companyid        = ?,
+						organizationid        = ?,
 						loginoccupation       = ?,
 						loginphone            = ?
 				    WHERE uid = ?";
@@ -133,7 +151,7 @@ class Logins
 						$data->email,
 						$data->idrol,
 						$data->aboutme,
-						$data->companyid,
+						$data->organizationid,
 						$data->loginoccupation,
 						$data->loginphone,
 						$data->uid
@@ -149,8 +167,8 @@ class Logins
 	{
 		try 
 		{
-		$sql = "INSERT INTO `tbllogins` (fname, lname, username, email, password, idrol, activelogin) 
-		        VALUES (?, ?, ?, ?, ?, ?, 1)";
+		$sql = "INSERT INTO `tbllogins` (fname, lname, username, email, password, idrol, organizationid, activelogin) 
+		        VALUES (?, ?, ?, ?, ?, ?, 1, 1)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
