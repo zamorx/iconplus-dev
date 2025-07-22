@@ -33,7 +33,7 @@ class Logins
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM tbllogins, tblroles WHERE tbllogins.idrol = tblroles.idrol AND TBLLOGINS.activelogin = true");
+			$stm = $this->pdo->prepare("SELECT * FROM tbllogins, tblroles WHERE tbllogins.idrol = tblroles.idrol AND tbllogins.activelogin = true");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -51,7 +51,7 @@ class Logins
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM tbllogins, tblroles WHERE tbllogins.idrol = tblroles.idrol AND TBLLOGINS.activelogin = true AND username = ? AND password = ?");
+			$stm = $this->pdo->prepare("SELECT * FROM tbllogins, tblroles WHERE tbllogins.idrol = tblroles.idrol AND tbllogins.activelogin = true AND username = ? AND password = ?");
 			$stm->execute(array($this->username, hash('sha256', $this->password)));
 
 			return $stm->fetch(PDO::FETCH_OBJ);
