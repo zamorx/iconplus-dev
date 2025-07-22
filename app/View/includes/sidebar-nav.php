@@ -34,7 +34,7 @@
 						</ul>
 						
 					</li>
-					<?php if ($userDetails->idrol == 1) : ?>
+					
 					<!-- Menu de Companies -->
 					 <li class="sidebar-item active">
 						<a data-bs-target="#companies" data-bs-toggle="collapse" class="sidebar-link" aria-expanded="true">
@@ -66,6 +66,8 @@
 							<li class="sidebar-item"><a class="sidebar-link" href="?c=Invoices&a=Crud">Nuevo registro<span class="sidebar-badge badge rounded-pill bg-primary">New</span></a></li>
 						</ul>
 					</li>
+
+					<?php if ($userDetails->idrol == 1) : ?>
 
 					<!-- Menu de Logins -->
 

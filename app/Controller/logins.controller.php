@@ -12,10 +12,10 @@ class LoginsController
     }
 
     public function Index()
-    {
-        require_once 'View/header.php';
-        require_once 'View/logins.php';
-        require_once 'View/footer.php';
+    {  
+            require_once 'View/header.php';
+            require_once 'View/logins.php';
+            require_once 'View/footer.php';  
     }
 
     public function Crud()
@@ -35,6 +35,13 @@ class LoginsController
     {
         require_once 'View/header.php';
         require_once 'View/logins-saved.php';
+        require_once 'View/footer.php';
+    }
+
+    public function Updated()
+    {
+        require_once 'View/header.php';
+        require_once 'View/logins-updated.php';
         require_once 'View/footer.php';
     }
 
@@ -64,11 +71,14 @@ class LoginsController
 
         // SI ID Support ES MAYOR QUE CERO (0) INDICA QUE ES UNA ACTUALIZACIÓN DE ESA TUPLA EN LA TABLA Support, SINO SIGNIFICA QUE ES UN NUEVO REGISTRO
 
-        $alm->uid > 0
-            ? $this->model->Actualizar($alm)
-            : $this->model->Registrar($alm);
-
-        header('Location: ?c=Logins&a=Saved');
+        if ($alm->uid > 0 ) {
+            $this->model->Actualizar($alm);
+            header('Location: ?c=Logins&a=Updated');
+        }
+        else{
+            $this->model->Registrar($alm);
+            header('Location: ?c=Logins&a=Saved');
+        }   
 
     }
 
@@ -91,6 +101,13 @@ class LoginsController
         require_once 'View/footer.php';
     }
 
+    public function passUpdated()
+    {
+        require_once 'View/header.php';
+        require_once 'View/logins-passwd-updated.php';
+        require_once 'View/footer.php';
+    }
+
     public function PasswordChange()
     {
         $alm = new Logins();
@@ -100,7 +117,7 @@ class LoginsController
 
         $this->model->passwordChange($alm);
 
-        header('Location: ?c=Logins');
+        header('Location: ?c=Logins&a=passUpdated');
     }
 
     public function Profile()
@@ -149,7 +166,12 @@ class LoginsController
 
         $this->model->Actualizar($alm);
 
-        header('Location: ?c=Logins&a=ProfileSaved&uid=' . $alm->uid);
+        if ($alm->idrol == 1 ) {
+            header('Location: ?c=Logins&a=Updated');
+        }
+        else{
+           header('Location: ?c=Logins&a=ProfileSaved&uid=' . $alm->uid);
+        }
 
     }
 
