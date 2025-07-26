@@ -1,4 +1,5 @@
 <?php
+require_once 'Model/home.php';
 
 class HomeController
 {
@@ -7,6 +8,7 @@ class HomeController
 
     public function __CONSTRUCT()
     {
+        $this->model = new Home();
     }
 
     public function Index()
