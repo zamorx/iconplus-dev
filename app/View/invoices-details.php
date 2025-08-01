@@ -29,8 +29,8 @@ $titletotal = $total;
 							<div class="card">
 								<div class="card-body m-sm-3 m-md-5">
 									<div class="mb-4">
-										Hola <strong><?php echo $alm->fname; ?></strong>,
-										<br>
+										<!-- Hola <strong><?php echo $alm->fname; ?></strong>, 
+										<br> -->
 										Esta es una factura emitida por el monto de <strong><?php $titletotal = number_format($titletotal, 2);  echo "U$ ". $titletotal; ?></strong> a nombre de <?php echo $alm->companyname; ?>
 									</div>
 
@@ -151,8 +151,8 @@ $titletotal = $total;
 							<div class="card">
 								<div class="card-body m-sm-3 m-md-5">
 									<div class="mb-4">
-										Hola <strong><?php echo $alm->fname; ?></strong>,
-										<br>
+										<!--Hola <strong><?php echo $alm->fname; ?></strong>,
+										<br> -->
 										Esta es una factura emitida por el monto de <strong><?php $titletotal = number_format($titletotal, 2);  echo "C$ ". $titletotal; ?></strong> a nombre de <?php echo $alm->companyname; ?>
 									</div>
 
