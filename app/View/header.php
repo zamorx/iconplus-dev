@@ -1,7 +1,24 @@
 <?php
 require_once('../login/config.php');
 require_once('../login/session.php');
+//$userDetails = $userClass->userDetails($session_uid);
+
+if (!isset($session_uid) || empty($session_uid)) {
+  header("Location: ../login/index.php");
+  exit();
+}
+
+if (!isset($userClass)) {
+  require_once('../login/class/userClass.php');
+  $userClass = new userClass();
+}
+
 $userDetails = $userClass->userDetails($session_uid);
+
+if (!$userDetails) {
+  header("Location: ../login/logout.php");
+  exit();
+}
 
 ?>
 
